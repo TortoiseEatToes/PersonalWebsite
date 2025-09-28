@@ -3,11 +3,11 @@
 <FluentStack Orientation="Orientation.Vertical">
 	<FluentStack Orientation="Orientation.Horizontal">
 		<FluentSpacer></FluentSpacer>
-		<FluentButton OnClick="@OnAboutMeButtonClick">About Me</FluentButton>
+		<FluentButton Appearance="Appearance.Accent" OnClick="@OnAboutMeButtonClick">About Me</FluentButton>
 		<FluentSpacer></FluentSpacer>
-		<FluentButton OnClick="@OnCareerButtonClick">Career</FluentButton>
+		<FluentButton Appearance="Appearance.Accent" OnClick="@OnCareerButtonClick">Career</FluentButton>
 		<FluentSpacer></FluentSpacer>
-		<FluentButton OnClick="@OnSideProjectButtonClick">Side Projects</FluentButton>
+		<FluentButton Appearance="Appearance.Accent" OnClick="@OnSideProjectButtonClick">Side Projects</FluentButton>
 		<FluentSpacer></FluentSpacer>
 	</FluentStack>
 	@if (ContentType == ContentType.CAREER)
