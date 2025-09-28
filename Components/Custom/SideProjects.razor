@@ -2,44 +2,69 @@
 <FluentStack Orientation="Orientation.Vertical">
 	<h3>I love doing side projects to grow my skills in ways that I cannot at work</h3>
 
-	<ProjectBox Title="This website">
-		<p>
-			This website is all made in blazor and hosted on Azure
-			<a href="https://github.com/TortoiseEatToes/PersonalWebsite">Link to the code for this!</a>
-		</p>
-	</ProjectBox>
-
 	<ProjectBox Title="Sola's mentoring">
-		<p>
-			Developing a Blazor website with a PostGres backend for a
-			coworker who need helps managing her work mentoring
-			program next January.
-		</p>
+		<Status>
+			MVP due January 2026
+		</Status>
+		<Body>
+			<p>
+				Developing a Blazor website with a PostGres backend for a
+				coworker who need helps managing her work mentoring
+				program next January.
+			</p>
+		</Body>
 	</ProjectBox>
 
 	<ProjectBox Title="Game Jams (12+)">
-		<p>
-			Participated in and/or coached over a dozen game jams
-			My favorite game jam is still used as one of the poster
-			children for Blizzard’s yearly internal game jam:
-			Hungry Hungry Hamsters
-		</p>
-	</ProjectBox>
-
-	<ProjectBox Title="Drafty">
-		<p>
-			League of Legends In-House Discord Bot
-			Worked with colleagues on a Discord bot with a
-			PostgreSQL database and web API to help us manage our
-			inhouse League of Legends matches
-			DocFX-Generated Documentation
-		</p>
-		<a href="https://tortoiseeattoes.github.io/Drafty/docs/what-is-drafty.html">Drafty</a>
+		<Status>
+			Never Ending <FluentIcon Value="@(new Icons.Regular.Size16.Heart())" />
+		</Status>
+		<Body>
+			<p>
+				Participated in and/or coached over a dozen game jams
+				My favorite game jam is still used as one of the poster
+				children for Blizzard’s yearly internal game jam:
+				Hungry Hungry Hamsters
+			</p>
+		</Body>
 	</ProjectBox>
 
 	<ProjectBox Title="Linux server explorations">
-		<p>I have my own little linux server under my desk</p>
-		<p>Picture of my server machine</p>
+		<Status>
+			Ongoing
+		</Status>
+		<Body>
+			<p>I have my own little linux server under my desk</p>
+			<p>Picture of my server machine</p>
+		</Body>
+	</ProjectBox>
+
+	<ProjectBox Title="Drafty">
+		<Status>
+			Shelved for now
+		</Status>
+		<Body>
+			<p>
+				League of Legends In-House Discord Bot
+				Worked with colleagues on a Discord bot with a
+				PostgreSQL database and web API to help us manage our
+				inhouse League of Legends matches
+				DocFX-Generated Documentation
+			</p>
+			<a href="https://tortoiseeattoes.github.io/Drafty/docs/what-is-drafty.html">Drafty</a>
+		</Body>
+	</ProjectBox>
+
+	<ProjectBox Title="This website">
+		<Status>
+			Ongoing
+		</Status>
+		<Body>
+			<p>
+				This website is all made in blazor and hosted on Azure
+				<a href="https://github.com/TortoiseEatToes/PersonalWebsite">Link to the code for this!</a>
+			</p>
+		</Body>
 	</ProjectBox>
 </FluentStack>
 

@@ -1,6 +1,7 @@
 ﻿<FluentCard>
 	<h1>@Title</h1>
-	@ChildContent
+	<h5>Status: @Status</h5>
+	@Body
 </FluentCard>
 
 @code {
@@ -8,5 +9,8 @@
 	public string Title { get; set; } = "Title Not Set";
 
 	[Parameter]
-	public RenderFragment? ChildContent { get; set; }
+	public RenderFragment? Status { get; set; }
+
+	[Parameter]
+	public RenderFragment? Body { get; set; }
 }
