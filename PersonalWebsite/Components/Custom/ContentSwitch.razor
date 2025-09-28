@@ -1,0 +1,48 @@
+﻿@using PersonalWebsite.Code
+
+<FluentStack Orientation="Orientation.Vertical">
+	<FluentStack Orientation="Orientation.Horizontal">
+		<FluentSpacer></FluentSpacer>
+		<FluentButton OnClick="@OnAboutMeButtonClick">About Me</FluentButton>
+		<FluentSpacer></FluentSpacer>
+		<FluentButton OnClick="@OnCareerButtonClick">Career</FluentButton>
+		<FluentSpacer></FluentSpacer>
+		<FluentButton OnClick="@OnSideProjectButtonClick">Side Projects</FluentButton>
+		<FluentSpacer></FluentSpacer>
+	</FluentStack>
+	@if (ContentType == ContentType.CAREER)
+	{
+		<Career></Career>
+	}
+	else if (ContentType == ContentType.SIDE_PROJECTS)
+	{
+		<SideProjects></SideProjects>
+	}
+	else if (ContentType == ContentType.ABOUT_ME)
+	{
+		<AboutMe></AboutMe>
+	}
+	else
+	{
+		<h3>Unexpected content type</h3>
+	}
+</FluentStack>
+
+@code {
+	private ContentType ContentType = ContentType.ABOUT_ME;
+
+	private void OnCareerButtonClick()
+	{
+		ContentType = ContentType.CAREER;
+	}
+
+	private void OnSideProjectButtonClick()
+	{
+		ContentType = ContentType.SIDE_PROJECTS;
+	}
+
+	private void OnAboutMeButtonClick()
+	{
+		ContentType = ContentType.ABOUT_ME;
+	}
+}

@@ -1,0 +1,14 @@
+﻿
+
+<FluentStack Orientation="Orientation.Vertical">
+	<h3>@Title</h3>
+	<div>@ChildContent</div>
+</FluentStack>
+
+@code {
+	[Parameter]
+	public string Title { get; set; } = "Title not set";
+
+	[Parameter]
+	public RenderFragment? ChildContent { get; set; }
+}

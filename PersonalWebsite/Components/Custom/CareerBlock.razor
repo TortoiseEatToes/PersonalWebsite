@@ -1,0 +1,25 @@
+﻿
+
+<FluentStack Orientation="Orientation.Vertical">
+	<h3>@Company</h3>
+	<FluentStack Orientation="Orientation.Horizontal" Width="70%">
+		<strong>@Role</strong>
+		<FluentSpacer></FluentSpacer>
+		<strong>@DateRange</strong>
+	</FluentStack>
+	<div>@ChildContent</div>
+</FluentStack>
+
+@code {
+	[Parameter]
+	public string Company { get; set; } = "Company not set";
+
+	[Parameter]
+	public string Role { get; set; } = "Role not set";
+
+	[Parameter]
+	public string DateRange { get; set; } = "Date range not set";
+
+	[Parameter]
+	public RenderFragment? ChildContent { get; set; }
+}
