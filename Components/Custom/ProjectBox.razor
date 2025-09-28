@@ -1,0 +1,12 @@
+﻿<FluentCard>
+	<h1>@Title</h1>
+	@ChildContent
+</FluentCard>
+
+@code {
+	[Parameter]
+	public string Title { get; set; } = "Title Not Set";
+
+	[Parameter]
+	public RenderFragment? ChildContent { get; set; }
+}
