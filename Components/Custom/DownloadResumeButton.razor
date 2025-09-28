@@ -1,50 +1,10 @@
-﻿@rendermode InteractiveServer
+﻿
 
-@inject IToastService ToastService
-@inject IJSRuntime JS
-
-@using System.IO
-
-<FluentToastProvider />
-
-<FluentButton @onclick="DownloadFileFromStream">
+<FluentAnchor Href="@ResumeFileName" Download="@ResumeFileName">
+    <FluentIcon Value="@(new Icons.Regular.Size16.Globe())" Color="@Color.Success" Slot="start" />
     Download Resume
-</FluentButton>
-
-<script>
-    window.downloadFileFromStream = async (fileName, contentStreamReference) => {
-      const arrayBuffer = await contentStreamReference.arrayBuffer();
-      const blob = new Blob([arrayBuffer]);
-      const url = URL.createObjectURL(blob);
-      const anchorElement = document.createElement('a');
-      anchorElement.href = url;
-      anchorElement.download = fileName ?? '';
-      anchorElement.click();
-      anchorElement.remove();
-      URL.revokeObjectURL(url);
-    }
-</script>
+</FluentAnchor>
 
 @code {
-    private const string OutputFileName = "SaraAsmussen_Resume.pdf";
-
-    private Stream GetFileStream()
-    {
-        return File.OpenRead($"{Directory.GetCurrentDirectory()}\\wwwroot\\SaraAsmussen_Resume.pdf");
-    }
-
-    private async Task DownloadFileFromStream()
-    {
-        try
-        {
-            var fileStream = GetFileStream();
-            using var streamRef = new DotNetStreamReference(stream: fileStream);
-            await JS.InvokeVoidAsync("downloadFileFromStream", OutputFileName, streamRef);
-        }
-        catch (Exception exception)
-        {
-            string errorMessage = $"DownloadFileFromStream failed: {exception.Message}";
-            ToastService.ShowToast(ToastIntent.Error, errorMessage);
-        }
-    }
+    private const string ResumeFileName = "SaraAsmussen_Resume.pdf";
 }
