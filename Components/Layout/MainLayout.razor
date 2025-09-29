@@ -1,5 +1,7 @@
 ﻿@inherits LayoutComponentBase
 
+@using PersonalWebsite.Code
+
 <FluentLayout>
     <FluentHeader>
         <FluentAnchor Href="/" title="Jump to home">Home</FluentAnchor>
@@ -26,34 +28,5 @@
 </div>
 
 @code {
-    private string _buttonStyle = "transition: background-color 0.3s ease-in-out;";
-
-    private string BodyStyle = @"
-        @keyframes myAnimation {
-          0%   {background-color:red; left:0px; top:0px;}
-          25%  {background-color:yellow; left:200px; top:0px;}
-          50%  {background-color:blue; left:200px; top:200px;}
-          75%  {background-color:green; left:0px; top:200px;}
-          100% {background-color:red; left:0px; top:0px;}
-        }
-
-        @keyframes myAnimation2 {
-            from { opacity: 1; }
-            to { opacity: 0; }
-        }
-
-        @keyframes rotate {
-          0% {
-            transform: rotate(0);
-          }
-          100% {
-            transform: rotate(360deg);
-          }
-        }
-        
-          position: relative;
-          background-color: grey;
-          animation-name: rotate;
-          animation-duration: 4s;
-    ";
+    private string BodyStyle = StyleUtils.GetSlideUpAnimation();
 }

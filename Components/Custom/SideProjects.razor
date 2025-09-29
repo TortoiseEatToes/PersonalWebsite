@@ -1,5 +1,6 @@
-﻿
-<FluentStack Orientation="Orientation.Vertical">
+﻿@using PersonalWebsite.Code
+
+<FluentStack Orientation="Orientation.Vertical" Style="@BodyStyle">
 	<h3>I love doing side projects to grow my skills in ways that I cannot at work</h3>
 
 	<ProjectBox Title="Sola's mentoring">
@@ -70,5 +71,5 @@
 
 
 @code {
-
+	private string BodyStyle = StyleUtils.GetSlideUpAnimation();
 }
