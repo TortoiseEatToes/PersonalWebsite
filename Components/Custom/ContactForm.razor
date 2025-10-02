@@ -1,4 +1,5 @@
-﻿
+﻿@rendermode InteractiveServer
+
 <FluentCard>
 	<FluentStack Orientation="Orientation.Vertical" HorizontalAlignment="HorizontalAlignment.Center">
 		<FluentStack Orientation="Orientation.Horizontal" HorizontalAlignment="HorizontalAlignment.Center">
@@ -7,7 +8,8 @@
 		</FluentStack>
 		<FluentTextField @bind-Value=Email Minlength="4" Label="Email"></FluentTextField>
 		<FluentTextField @bind-Value=Subject Minlength="4" Label="Subject"></FluentTextField>
-		<FluentTextField @bind-Value=Message Label="Message"></FluentTextField>
+		<FluentTextArea @bind-Value=Message Label="Message"></FluentTextArea>
+		<FluentButton OnClick="@OnSubmit" Appearance="Appearance.Accent">Submit</FluentButton>
 	</FluentStack>
 </FluentCard>
 
@@ -18,4 +20,9 @@
 	private string Email { get; set; } = string.Empty;
 	private string Subject { get; set; } = string.Empty;
 	private string Message { get; set; } = string.Empty;
+
+	private void OnSubmit()
+	{
+
+	}
 }
