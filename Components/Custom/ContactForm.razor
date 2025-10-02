@@ -1,7 +1,10 @@
 ﻿@rendermode InteractiveServer
 
+@inject IDialogService DialogService
+
 <FluentCard>
 	<FluentStack Orientation="Orientation.Vertical" HorizontalAlignment="HorizontalAlignment.Center">
+		<h3>Contact me</h3>
 		<FluentStack Orientation="Orientation.Horizontal" HorizontalAlignment="HorizontalAlignment.Center">
 			<FluentTextField @bind-Value=FirstName Label="First Name"></FluentTextField>
 			<FluentTextField @bind-Value=LastName Label="Last Name"></FluentTextField>
@@ -21,8 +24,17 @@
 	private string Subject { get; set; } = string.Empty;
 	private string Message { get; set; } = string.Empty;
 
-	private void OnSubmit()
-	{
+	private const string MessageTitle = "Email Result";
 
+	private async Task OnSubmit()
+	{
+		try
+		{
+			var dialog = await DialogService.ShowSuccessAsync("Email sent!", MessageTitle, "Okay");
+		}
+		catch(Exception exception)
+		{
+			
+		}
 	}
 }
