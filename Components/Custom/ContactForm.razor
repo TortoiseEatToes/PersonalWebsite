@@ -1,13 +1,13 @@
 ﻿
 <FluentCard>
 	<FluentStack Orientation="Orientation.Vertical" HorizontalAlignment="HorizontalAlignment.Center">
-		<FluentStack Orientation="Orientation.Horizontal" VerticalAlignment="VerticalAlignment.Center">
-			<FluentTextField @bind-Value=FirstName AriaLabel="No label"></FluentTextField>
-			<FluentTextField @bind-Value=LastName Label="Label"></FluentTextField>
+		<FluentStack Orientation="Orientation.Horizontal" HorizontalAlignment="HorizontalAlignment.Center">
+			<FluentTextField @bind-Value=FirstName Label="First Name"></FluentTextField>
+			<FluentTextField @bind-Value=LastName Label="Last Name"></FluentTextField>
 		</FluentStack>
-		<FluentTextField @bind-Value=Email Minlength="4" Label="Minlength"></FluentTextField>
-		<FluentTextField @bind-Value=Subject Maxlength="4" Label="Maxlength"></FluentTextField>
-		<FluentTextField @bind-Value=Message Maxlength="4" Label="Maxlength"></FluentTextField>
+		<FluentTextField @bind-Value=Email Minlength="4" Label="Email"></FluentTextField>
+		<FluentTextField @bind-Value=Subject Minlength="4" Label="Subject"></FluentTextField>
+		<FluentTextField @bind-Value=Message Label="Message"></FluentTextField>
 	</FluentStack>
 </FluentCard>
 
