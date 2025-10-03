@@ -1,16 +1,14 @@
 ﻿@page "/Contact"
+@rendermode InteractiveServer
+
 @using PersonalWebsite.Components.Custom
 @using PersonalWebsite.Components.Layout
 
-@rendermode InteractiveServer
-
-@layout MainLayout
+@layout ContactLayout
 
 <PageTitle>Contact</PageTitle>
 
 <FluentDialogProvider />
-
-<PersonalHeader ContactAppearance="Appearance.Accent"></PersonalHeader>
 
 <div class="fadeIn">
 	<ContactForm/>

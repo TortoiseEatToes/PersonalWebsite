@@ -3,6 +3,9 @@
 @using PersonalWebsite.Components.Custom
 
 <FluentLayout>
+    <PersonalHeader ProjectsAppearance="@ProjectsAppearance"
+                    CareerAppearance="@CareerAppearance"
+                    ContactAppearance="@ContactAppearance"/>
     <FluentStack Class="main" Orientation="Orientation.Horizontal">
         <FluentBodyContent Class="body-content">
             <div class="content">
@@ -20,4 +23,9 @@
 </div>
 
 @code {
+    public virtual Appearance ProjectsAppearance { get; } = Appearance.Neutral;
+
+    public virtual Appearance CareerAppearance { get; } = Appearance.Neutral;
+
+    public virtual Appearance ContactAppearance { get; } = Appearance.Neutral;
 }
