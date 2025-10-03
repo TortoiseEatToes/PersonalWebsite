@@ -30,11 +30,11 @@
 	{
 		try
 		{
-			var dialog = await DialogService.ShowSuccessAsync("Email sent!", MessageTitle, "Okay");
+			await DialogService.ShowSuccessAsync("Email sent!", MessageTitle, "Okay");
 		}
 		catch(Exception exception)
 		{
-			
+			DialogService.ShowError(exception.Message, MessageTitle, "Okay");
 		}
 	}
 }
