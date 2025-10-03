@@ -4,5 +4,5 @@ namespace PersonalWebsite.Components.Layout;
 
 public class ProjectsLayout : MainLayout
 {
-    public override Appearance ProjectsAppearance { get => Appearance.Filled; }
+    protected override Appearance ProjectsAppearance { get => ClickedAppearance; }
 }

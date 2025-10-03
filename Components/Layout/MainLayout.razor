@@ -4,8 +4,8 @@
 
 <FluentLayout>
     <PersonalHeader ProjectsAppearance="@ProjectsAppearance"
-                    CareerAppearance="@CareerAppearance"
-                    ContactAppearance="@ContactAppearance"/>
+    CareerAppearance="@CareerAppearance"
+    ContactAppearance="@ContactAppearance"/>
     <FluentStack Class="main" Orientation="Orientation.Horizontal">
         <FluentBodyContent Class="body-content">
             <div class="content">
@@ -24,9 +24,13 @@
 </div>
 
 @code {
-    public virtual Appearance ProjectsAppearance { get; } = Appearance.Neutral;
+    protected virtual Appearance ProjectsAppearance { get; } = DefaultAppearance;
 
-    public virtual Appearance CareerAppearance { get; } = Appearance.Neutral;
+    protected virtual Appearance CareerAppearance { get; } = DefaultAppearance;
 
-    public virtual Appearance ContactAppearance { get; } = Appearance.Neutral;
+    protected virtual Appearance ContactAppearance { get; } = DefaultAppearance;
+
+    static protected Appearance ClickedAppearance { get; } = Appearance.Outline;
+
+    static protected Appearance DefaultAppearance { get; } = Appearance.Neutral;
 }

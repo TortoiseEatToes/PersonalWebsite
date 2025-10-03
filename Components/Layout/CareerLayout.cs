@@ -4,5 +4,5 @@ namespace PersonalWebsite.Components.Layout;
 
 public class CareerLayout : MainLayout
 {
-    public override Appearance CareerAppearance { get => Appearance.Filled; }
+    protected override Appearance CareerAppearance { get => ClickedAppearance; }
 }
