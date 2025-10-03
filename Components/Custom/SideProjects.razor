@@ -24,8 +24,12 @@
 			children for Blizzard’s yearly internal game jam:
 			Hungry Hungry Hamsters
 		</p>
-		<img src="images/HungryHungryHamsters.png" style="width:200px;height:200px;" />
-		<a href="https://ninehearts.itch.io/hamsters">Hungry Hamsters</a>
+		<FluentStack Orientation="Orientation.Vertical">
+			<a href="@HungryHamstersLink">Hungry Hamsters</a>
+			<a Href="@HungryHamstersLink">
+				<img src="images/HungryHungryHamsters.png" style="width:200px;height:200px;" />
+			</a>
+		</FluentStack>
 	</ProjectBox>
 
 	<ProjectBox Title="Linux server explorations">
@@ -57,4 +61,5 @@
 
 
 @code {
+	private string HungryHamstersLink = "https://ninehearts.itch.io/hamsters";
 }
