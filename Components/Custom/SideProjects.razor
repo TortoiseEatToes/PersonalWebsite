@@ -42,14 +42,19 @@
 
 	<ProjectBox Title="Drafty">
 		<p>
-			League of Legends In-House Discord Bot
+			Fan project for making a League of Legends In-House Discord Bot
 			Worked with colleagues on a Discord bot with a
 			PostgreSQL database and web API to help us manage our
 			inhouse League of Legends matches
 			DocFX-Generated Documentation
 		</p>
-		<a href="https://tortoiseeattoes.github.io/Drafty/docs/what-is-drafty.html">Drafty</a>
-		<MentoringDiagram></MentoringDiagram>
+		<a href="@DraftyDocumentationLink">Drafty</a>
+		<FluentStack Orientation="Orientation.Horizontal">
+			<DraftyDiagram />
+			<a Href="@DraftyDocumentationLink">
+				<img src="images/DraftyIcon.png" style="width:200px;height:200px;" />
+			</a>
+		</FluentStack>
 	</ProjectBox>
 
 	<ProjectBox Title="This website">
@@ -62,4 +67,5 @@
 
 @code {
 	private string HungryHamstersLink = "https://ninehearts.itch.io/hamsters";
+	private string DraftyDocumentationLink = "https://tortoiseeattoes.github.io/Drafty/docs/what-is-drafty.html";
 }
