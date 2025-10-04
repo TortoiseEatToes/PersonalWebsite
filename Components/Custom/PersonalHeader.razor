@@ -1,9 +1,16 @@
-﻿<FluentHeader>
-    <HomeButton></HomeButton>
-    <FluentStack Orientation="Orientation.Horizontal" HorizontalAlignment="HorizontalAlignment.Right">
-        <FluentAnchor Href="Projects" title="Projects Page" Appearance="@ProjectsAppearance">Projects</FluentAnchor>
-        <FluentAnchor Href="Career" title="Career Page" Appearance="@CareerAppearance">Career</FluentAnchor>
-        <FluentAnchor Href="Contact" title="Contact Page" Appearance="@ContactAppearance">Contact</FluentAnchor>
+﻿<FluentHeader Height="60">
+    <FluentStack>
+        <HomeButton/>
+        <FluentGrid>
+            <FluentGridItem HiddenWhen="GridItemHidden.XsAndDown">
+                <FluentAnchor Href="Projects" title="Projects Page" Appearance="@ProjectsAppearance">Projects</FluentAnchor>
+                <FluentAnchor Href="Career" title="Career Page" Appearance="@CareerAppearance">Career</FluentAnchor>
+                <FluentAnchor Href="Contact" title="Contact Page" Appearance="@ContactAppearance">Contact</FluentAnchor>
+            </FluentGridItem>
+            <FluentGridItem HiddenWhen="GridItemHidden.SmAndUp">
+                <FluentButton title="NavButton"><FluentIcon Value="@(new Icons.Regular.Size32.Navigation())" /></FluentButton>
+            </FluentGridItem>
+        </FluentGrid>
     </FluentStack>
 </FluentHeader>
 
