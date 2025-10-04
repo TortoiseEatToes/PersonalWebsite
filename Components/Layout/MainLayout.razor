@@ -4,17 +4,17 @@
 
 <FluentLayout>
     <PersonalHeader ProjectsAppearance="@ProjectsAppearance"
-    CareerAppearance="@CareerAppearance"
-    ContactAppearance="@ContactAppearance"/>
-    <FluentStack Class="main" Orientation="Orientation.Horizontal">
+        CareerAppearance="@CareerAppearance"
+        ContactAppearance="@ContactAppearance"/>
+    <FluentStack Class="main" VerticalAlignment="VerticalAlignment.Center">
         <FluentBodyContent Class="body-content">
             <div class="content">
                 @Body
+                <br/>
+                <PersonalFooter/>
             </div>
         </FluentBodyContent>
     </FluentStack>
-    <br/>
-    <PersonalFooter></PersonalFooter>
 </FluentLayout>
 
 <div id="blazor-error-ui" data-nosnippet>
