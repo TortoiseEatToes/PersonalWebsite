@@ -3,13 +3,15 @@
 @using PersonalWebsite.Layouts;
 
 <FluentLayout>
-    <FluentStack Class="main" VerticalAlignment="VerticalAlignment.Center">
+    <FluentStack Class="main">
         <FluentBodyContent Class="body-content">
             <div class="content">
-                <NavigationButtons ProjectsAppearance="@ProjectsAppearance"
-                                CareerAppearance="@CareerAppearance"
-                                ContactAppearance="@ContactAppearance" />
-                @Body
+                <FluentStack Orientation="Orientation.Vertical">
+                    <NavigationButtons ProjectsAppearance="@ProjectsAppearance"
+                                       CareerAppearance="@CareerAppearance"
+                                       ContactAppearance="@ContactAppearance" />
+                    @Body
+                </FluentStack>
             </div>
         </FluentBodyContent>
     </FluentStack>
