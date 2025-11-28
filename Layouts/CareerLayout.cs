@@ -1,6 +1,6 @@
 ﻿using Microsoft.FluentUI.AspNetCore.Components;
 
-namespace PersonalWebsite.Components.Layout;
+namespace PersonalWebsite.Layouts;
 
 public class CareerLayout : MainLayout
 {
