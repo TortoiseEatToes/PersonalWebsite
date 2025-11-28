@@ -1,25 +1,23 @@
 ﻿
-<FluentStack VerticalAlignment="VerticalAlignment.Center">
-    <div class="hide-on-mobile">
-        <FluentStack VerticalAlignment="VerticalAlignment.Center">
-            <HomeButton />
-            <FluentStack VerticalAlignment="VerticalAlignment.Center" HorizontalAlignment="HorizontalAlignment.Right">
-                <FluentAnchor Href="Projects" title="Projects Page" Appearance="@ProjectsAppearance">Projects</FluentAnchor>
-                <FluentAnchor Href="Career" title="Career Page" Appearance="@CareerAppearance">Career</FluentAnchor>
-            </FluentStack>
+<div class="hide-on-mobile">
+    <FluentStack VerticalAlignment="VerticalAlignment.Center">
+        <HomeButton />
+        <FluentStack VerticalAlignment="VerticalAlignment.Center" HorizontalAlignment="HorizontalAlignment.Right">
+            <FluentAnchor Href="Projects" title="Projects Page" Appearance="@ProjectsAppearance">Projects</FluentAnchor>
+            <FluentAnchor Href="Career" title="Career Page" Appearance="@CareerAppearance">Career</FluentAnchor>
         </FluentStack>
-    </div>
+    </FluentStack>
+</div>
 
-    <div class="hide-on-desktop">
-        <FluentStack Orientation="Orientation.Vertical" VerticalAlignment="VerticalAlignment.Center" HorizontalAlignment="HorizontalAlignment.Center">
-            <HomeButton />
-            <FluentStack Orientation="Orientation.Horizontal" HorizontalAlignment="HorizontalAlignment.Center">
-                <FluentAnchor Href="Projects" title="Projects Page" Appearance="@ProjectsAppearance">Projects</FluentAnchor>
-                <FluentAnchor Href="Career" title="Career Page" Appearance="@CareerAppearance">Career</FluentAnchor>
-            </FluentStack>
+<div class="hide-on-desktop">
+    <FluentStack Orientation="Orientation.Vertical" HorizontalAlignment="HorizontalAlignment.Center">
+        <HomeButton />
+        <FluentStack Orientation="Orientation.Horizontal" HorizontalAlignment="HorizontalAlignment.Center">
+            <FluentAnchor Href="Projects" title="Projects Page" Appearance="@ProjectsAppearance">Projects</FluentAnchor>
+            <FluentAnchor Href="Career" title="Career Page" Appearance="@CareerAppearance">Career</FluentAnchor>
         </FluentStack>
-    </div>
-</FluentStack>
+    </FluentStack>
+</div>
 
 
 @code {
