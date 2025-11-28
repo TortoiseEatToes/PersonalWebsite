@@ -2,20 +2,18 @@
 
 @using PersonalWebsite.Layouts;
 
-<FluentLayout>
-    <FluentStack Class="main">
-        <FluentBodyContent Class="body-content">
-            <div class="content">
-                <FluentStack Orientation="Orientation.Vertical" HorizontalAlignment="HorizontalAlignment.Center">
-                    <NavigationButtons ProjectsAppearance="@ProjectsAppearance"
-                                       CareerAppearance="@CareerAppearance"
-                                       ContactAppearance="@ContactAppearance" />
-                    @Body
-                </FluentStack>
-            </div>
-        </FluentBodyContent>
-    </FluentStack>
-</FluentLayout>
+<FluentStack Class="main">
+    <FluentBodyContent Class="body-content">
+        <div class="content">
+            <FluentStack Orientation="Orientation.Vertical" HorizontalAlignment="HorizontalAlignment.Center">
+                <NavigationButtons ProjectsAppearance="@ProjectsAppearance"
+                                   CareerAppearance="@CareerAppearance"
+                                   ContactAppearance="@ContactAppearance" />
+                @Body
+            </FluentStack>
+        </div>
+    </FluentBodyContent>
+</FluentStack>
 
 <div id="blazor-error-ui" data-nosnippet>
     An unhandled error has occurred.
