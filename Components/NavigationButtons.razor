@@ -1,19 +1,25 @@
-﻿<FluentGrid>
-    <FluentGridItem HiddenWhen="GridItemHidden.XsAndDown">
-        <HomeButton />
-        <FluentAnchor Href="Projects" title="Projects Page" Appearance="@ProjectsAppearance">Projects</FluentAnchor>
-        <FluentAnchor Href="Career" title="Career Page" Appearance="@CareerAppearance">Career</FluentAnchor>
-    </FluentGridItem>
-    <FluentGridItem HiddenWhen="GridItemHidden.SmAndUp">
-        <FluentStack Orientation="Orientation.Vertical" VerticalAlignment="VerticalAlignment.Center" HorizontalAlignment="HorizontalAlignment.Center">
+﻿
+<FluentStack VerticalAlignment="VerticalAlignment.Center">
+    <div class="hide-on-mobile">
+        <FluentStack VerticalAlignment="VerticalAlignment.Center">
             <HomeButton />
-            <FluentStack Orientation="Orientation.Horizontal">
+            <FluentStack VerticalAlignment="VerticalAlignment.Center" HorizontalAlignment="HorizontalAlignment.Right">
                 <FluentAnchor Href="Projects" title="Projects Page" Appearance="@ProjectsAppearance">Projects</FluentAnchor>
                 <FluentAnchor Href="Career" title="Career Page" Appearance="@CareerAppearance">Career</FluentAnchor>
             </FluentStack>
         </FluentStack>
-    </FluentGridItem>
-</FluentGrid>
+    </div>
+
+    <div class="hide-on-desktop">
+        <FluentStack Orientation="Orientation.Vertical" VerticalAlignment="VerticalAlignment.Center" HorizontalAlignment="HorizontalAlignment.Center">
+            <HomeButton />
+            <FluentStack Orientation="Orientation.Horizontal" HorizontalAlignment="HorizontalAlignment.Center">
+                <FluentAnchor Href="Projects" title="Projects Page" Appearance="@ProjectsAppearance">Projects</FluentAnchor>
+                <FluentAnchor Href="Career" title="Career Page" Appearance="@CareerAppearance">Career</FluentAnchor>
+            </FluentStack>
+        </FluentStack>
+    </div>
+</FluentStack>
 
 
 @code {

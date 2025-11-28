@@ -5,10 +5,12 @@
 <FluentStack Class="main">
     <FluentBodyContent Class="body-content">
         <div class="content">
-            <FluentStack Orientation="Orientation.Vertical" HorizontalAlignment="HorizontalAlignment.Center">
+            <FluentStack Orientation="Orientation.Vertical">
                 <NavigationButtons ProjectsAppearance="@ProjectsAppearance"
-                                   CareerAppearance="@CareerAppearance"/>
-                @Body
+                                   CareerAppearance="@CareerAppearance" />
+                <FluentStack HorizontalAlignment="HorizontalAlignment.Center">
+                    @Body
+                </FluentStack>
             </FluentStack>
         </div>
     </FluentBodyContent>
