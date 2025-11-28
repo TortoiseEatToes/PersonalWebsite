@@ -3,7 +3,6 @@
         <HomeButton />
         <FluentAnchor Href="Projects" title="Projects Page" Appearance="@ProjectsAppearance">Projects</FluentAnchor>
         <FluentAnchor Href="Career" title="Career Page" Appearance="@CareerAppearance">Career</FluentAnchor>
-        <FluentAnchor Href="Contact" title="Contact Page" Appearance="@ContactAppearance">Contact</FluentAnchor>
     </FluentGridItem>
     <FluentGridItem HiddenWhen="GridItemHidden.SmAndUp">
         <FluentStack Orientation="Orientation.Vertical" VerticalAlignment="VerticalAlignment.Center" HorizontalAlignment="HorizontalAlignment.Center">
@@ -11,7 +10,6 @@
             <FluentStack Orientation="Orientation.Horizontal">
                 <FluentAnchor Href="Projects" title="Projects Page" Appearance="@ProjectsAppearance">Projects</FluentAnchor>
                 <FluentAnchor Href="Career" title="Career Page" Appearance="@CareerAppearance">Career</FluentAnchor>
-                <FluentAnchor Href="Contact" title="Contact Page" Appearance="@ContactAppearance">Contact</FluentAnchor>
             </FluentStack>
         </FluentStack>
     </FluentGridItem>
@@ -24,7 +22,4 @@
 
     [Parameter]
     public Appearance CareerAppearance { get; set; } = Appearance.Neutral;
-
-    [Parameter]
-    public Appearance ContactAppearance { get; set; } = Appearance.Neutral;
 }

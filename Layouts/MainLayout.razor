@@ -7,8 +7,7 @@
         <div class="content">
             <FluentStack Orientation="Orientation.Vertical" HorizontalAlignment="HorizontalAlignment.Center">
                 <NavigationButtons ProjectsAppearance="@ProjectsAppearance"
-                                   CareerAppearance="@CareerAppearance"
-                                   ContactAppearance="@ContactAppearance" />
+                                   CareerAppearance="@CareerAppearance"/>
                 @Body
             </FluentStack>
         </div>
@@ -25,8 +24,6 @@
     protected virtual Appearance ProjectsAppearance { get; } = DefaultAppearance;
 
     protected virtual Appearance CareerAppearance { get; } = DefaultAppearance;
-
-    protected virtual Appearance ContactAppearance { get; } = DefaultAppearance;
 
     static protected Appearance ClickedAppearance { get; } = Appearance.Outline;
 
