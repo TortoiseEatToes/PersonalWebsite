@@ -1,29 +1,30 @@
 using Microsoft.FluentUI.AspNetCore.Components;
 using PersonalWebsite.Components;
 
-var builder = WebApplication.CreateBuilder(args);
+var app = BuildRazorApp(args);
+RunApplication(app);
 
-// Add services to the container.
-builder.Services.AddRazorComponents()
-    .AddInteractiveServerComponents();
-builder.Services.AddFluentUIComponents();
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+static WebApplication BuildRazorApp(string[] args)
 {
-    app.UseExceptionHandler("/Error", createScopeForErrors: true);
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
+    var builder = WebApplication.CreateBuilder(args);
+    builder.Services.AddRazorComponents();
+    builder.Services.AddFluentUIComponents();
+    return builder.Build();
 }
 
-app.UseHttpsRedirection();
+static void RunApplication(WebApplication application)
+{
+    // Configure the HTTP request pipeline.
+    if (!application.Environment.IsDevelopment())
+    {
+        application.UseExceptionHandler("/Error", createScopeForErrors: true);
+        // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+        application.UseHsts();
+    }
 
-app.UseAntiforgery();
-
-app.MapStaticAssets();
-app.MapRazorComponents<App>()
-    .AddInteractiveServerRenderMode();
-
-app.Run();
+    application.UseHttpsRedirection();
+    application.UseAntiforgery();
+    application.MapStaticAssets();
+    application.MapRazorComponents<App>();
+    application.Run();
+}

@@ -1,4 +1,4 @@
-﻿@rendermode InteractiveServer
+﻿@*@rendermode InteractiveServer*@
 
 @inject IDialogService DialogService
 
@@ -15,7 +15,6 @@
 		<FluentButton OnClick="@OnSubmit" Appearance="Appearance.Accent">Submit</FluentButton>
 	</FluentStack>
 </FluentCard>
-
 
 @code {
 	private string FirstName { get; set; } = string.Empty;
