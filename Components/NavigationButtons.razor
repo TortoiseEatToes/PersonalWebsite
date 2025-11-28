@@ -1,0 +1,29 @@
+﻿<FluentGrid>
+    <FluentGridItem HiddenWhen="GridItemHidden.XsAndDown">
+        <FluentStack Orientation="Orientation.Horizontal" HorizontalAlignment="HorizontalAlignment.Center">
+            <HomeButton />
+            <FluentAnchor Href="Projects" title="Projects Page" Appearance="@ProjectsAppearance">Projects</FluentAnchor>
+            <FluentAnchor Href="Career" title="Career Page" Appearance="@CareerAppearance">Career</FluentAnchor>
+            <FluentAnchor Href="Contact" title="Contact Page" Appearance="@ContactAppearance">Contact</FluentAnchor>
+        </FluentStack>
+    </FluentGridItem>
+    <FluentGridItem HiddenWhen="GridItemHidden.SmAndUp">
+        <FluentStack Orientation="Orientation.Vertical" HorizontalAlignment="HorizontalAlignment.Center">
+            <HomeButton />
+            <FluentAnchor Href="Projects" title="Projects Page" Appearance="@ProjectsAppearance">Projects</FluentAnchor>
+            <FluentAnchor Href="Career" title="Career Page" Appearance="@CareerAppearance">Career</FluentAnchor>
+            <FluentAnchor Href="Contact" title="Contact Page" Appearance="@ContactAppearance">Contact</FluentAnchor>
+        </FluentStack>
+    </FluentGridItem>
+</FluentGrid>
+
+@code {
+    [Parameter]
+    public Appearance ProjectsAppearance { get; set; } = Appearance.Neutral;
+
+    [Parameter]
+    public Appearance CareerAppearance { get; set; } = Appearance.Neutral;
+
+    [Parameter]
+    public Appearance ContactAppearance { get; set; } = Appearance.Neutral;
+}
