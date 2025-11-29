@@ -27,7 +27,7 @@
 		<FluentStack Orientation="Orientation.Vertical">
 			<a href="@HungryHamstersLink">Hungry Hamsters</a>
 			<a Href="@HungryHamstersLink">
-				<img src="images/HungryHungryHamsters.png" style="width:200px;height:200px;" />
+				<img src="images/HungryHungryHamsters.png" alt="Hungry Hungry Hamsters Logo" style="width:200px;height:200px;">
 			</a>
 		</FluentStack>
 	</ProjectBox>
@@ -52,7 +52,7 @@
 		<FluentStack Orientation="Orientation.Horizontal">
 			<DraftyDiagram />
 			<a Href="@DraftyDocumentationLink">
-				<img src="images/DraftyIcon.png" style="width:200px;height:200px;" />
+				<img src="images/DraftyIcon.png" alt="Drafty Icon" style="width:200px;height:200px;"/>
 			</a>
 		</FluentStack>
 	</ProjectBox>
@@ -66,6 +66,6 @@
 
 
 @code {
-	private string HungryHamstersLink = "https://ninehearts.itch.io/hamsters";
-	private string DraftyDocumentationLink = "https://tortoiseeattoes.github.io/Drafty/docs/what-is-drafty.html";
+	private const string HungryHamstersLink = "https://ninehearts.itch.io/hamsters";
+	private const string DraftyDocumentationLink = "https://tortoiseeattoes.github.io/Drafty/docs/what-is-drafty.html";
 }

@@ -5,6 +5,7 @@ using PersonalWebsite;
 
 var host = BuildWebAssembly(args);
 await host.RunAsync();
+return;
 
 static WebAssemblyHost BuildWebAssembly(string[] args)
 {
