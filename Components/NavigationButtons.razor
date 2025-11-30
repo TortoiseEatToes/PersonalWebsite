@@ -3,9 +3,10 @@
     <FluentStack VerticalAlignment="VerticalAlignment.Center">
         <HomeButton />
         <FluentStack VerticalAlignment="VerticalAlignment.Center" HorizontalAlignment="HorizontalAlignment.Right">
-            <FluentAnchor Href="Projects" title="Projects Page" Appearance="@ProjectsAppearance">Projects</FluentAnchor>
-            <FluentAnchor Href="AboutMe" title="AboutMe Page" Appearance="@CareerAppearance">AboutMe</FluentAnchor>
-            <FluentAnchor Href="Career" title="Career Page" Appearance="@CareerAppearance">Career</FluentAnchor>
+            @foreach (var subpage in subPages)
+            {
+                <FluentAnchor Href="@subpage.Href" title="@subpage.Title" Appearance="@ProjectsAppearance">@subpage.Text</FluentAnchor>
+            }
         </FluentStack>
     </FluentStack>
 </div>
@@ -14,9 +15,10 @@
     <FluentStack Orientation="Orientation.Vertical" HorizontalAlignment="HorizontalAlignment.Center">
         <HomeButton />
         <FluentStack Orientation="Orientation.Horizontal" HorizontalAlignment="HorizontalAlignment.Center">
-            <FluentAnchor Href="Projects" title="Projects Page" Appearance="@ProjectsAppearance">Projects</FluentAnchor>
-            <FluentAnchor Href="AboutMe" title="AboutMe Page" Appearance="@CareerAppearance">AboutMe</FluentAnchor>
-            <FluentAnchor Href="Career" title="Career Page" Appearance="@CareerAppearance">Career</FluentAnchor>
+            @foreach (var subpage in subPages)
+            {
+                <FluentAnchor Href="@subpage.Href" title="@subpage.Title" Appearance="@ProjectsAppearance">@subpage.Text</FluentAnchor>
+            }
         </FluentStack>
     </FluentStack>
 </div>
@@ -28,4 +30,18 @@
 
     [Parameter]
     public Appearance CareerAppearance { get; set; } = Appearance.Neutral;
+
+    private List<SubPage> subPages = [
+        new (){ Href = "Projects", Title = "Projects Page", Text = "Projects"},
+        new (){ Href = "AboutMe", Title = "AboutMe Page", Text = "AboutMe"},
+        new (){ Href = "Career", Title = "Career Page", Text = "Career"},
+        new (){ Href = "Blog", Title = "Blog Page", Text = "Blog"},
+    ];
+
+    private class SubPage
+    {
+        public required string Href { get; set; }
+        public required string Title { get; set; }
+        public required string Text { get; set; }
+    }
 }
