@@ -1,0 +1,27 @@
+﻿<FluentCard>
+	<FluentStack Orientation="Orientation.Vertical">
+		<FluentButton Appearance="Appearance.Stealth" OnClick="@OnButtonClick">
+			<h3>@Title</h3>
+		</FluentButton>
+		@if (@Revealed)
+		{
+			<div>@ChildContent</div>
+		}
+	</FluentStack>
+</FluentCard>
+
+
+@code {
+	[Parameter]
+	public string Title { get; set; } = "Title not set";
+
+	[Parameter]
+	public RenderFragment? ChildContent { get; set; }
+
+	private bool Revealed { get; set; }
+
+	private void OnButtonClick()
+	{
+		Revealed = !Revealed;
+	}
+}

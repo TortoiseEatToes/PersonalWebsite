@@ -2,13 +2,18 @@
 
 <FluentCard>
 	<FluentStack Orientation="Orientation.Vertical">
-		<h3>@Company</h3>
-		<FluentStack Orientation="Orientation.Horizontal" Width="70%">
-			<strong>@Role</strong>
-			<FluentSpacer></FluentSpacer>
-			<strong>@DateRange</strong>
-		</FluentStack>
-		<div>@ChildContent</div>
+		<FluentButton Appearance="Appearance.Stealth" OnClick="@OnButtonClick">
+			<h3>@Company</h3>
+		</FluentButton>
+		@if (@Revealed)
+		{
+			<FluentStack Orientation="Orientation.Horizontal" Width="70%">
+				<strong>@Role</strong>
+				<FluentSpacer></FluentSpacer>
+				<strong>@DateRange</strong>
+			</FluentStack>
+			<div>@ChildContent</div>
+		}
 	</FluentStack>
 </FluentCard>
 
@@ -25,4 +30,11 @@
 
 	[Parameter]
 	public RenderFragment? ChildContent { get; set; }
+
+	private bool Revealed { get; set;}
+
+	private void OnButtonClick()
+	{
+		Revealed = !Revealed;
+	}
 }
