@@ -1,11 +1,14 @@
 ﻿
 
-<FluentStack Orientation="Orientation.Vertical">
+<MudStack>
 	<h3>My career in game dev story</h3>
 
 	<CareerBlock Company="Blizzard Entertainment" Role="Software Engineer" DateRange="June 2020 - Present">
 		<BulletPoint>Shipped Diablo 4, Seasons 1-10, including the Vessel of Hatred expansion</BulletPoint>
-		<BulletPoint>Created lightweight server container for our utility services, which significantly improved server deployment times by reducing container pull times from ~8 minutes to ~1 minute and cut costs on disk space by reducing install size by 66%.</BulletPoint>
+		<MudStack Row="@true">
+			<BulletPoint>Created lightweight server container for our utility services, which significantly improved server deployment times by reducing container pull times from ~8 minutes to ~1 minute and cut costs on disk space by reducing install size by 66%.</BulletPoint>
+			<ServerSavingsChart></ServerSavingsChart>
+		</MudStack>
 		<BulletPoint>Automated world map and monster spawn generation</BulletPoint>
 		<BulletPoint>Created canary tests that block bad builds from going to automated testing and QA</BulletPoint>
 		<BulletPoint>Led the planning and creation of a new self-service model for future automated testing that has been integrated into the Graphics and Tech-Art teams</BulletPoint>
@@ -33,7 +36,7 @@
 		<BulletPoint>Used SQL calls to get all the possible combinations of locations and options for the website</BulletPoint>
 		<BulletPoint>Wrote the documentation for using our new automation framework for the manual QA team.</BulletPoint>
 	</CareerBlock>
-</FluentStack>
+</MudStack>
 
 @code {
 }

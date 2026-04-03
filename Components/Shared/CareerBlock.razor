@@ -1,21 +1,21 @@
 ﻿
 
-<FluentCard>
-	<FluentStack Orientation="Orientation.Vertical">
-		<FluentButton Appearance="Appearance.Stealth" OnClick="@OnButtonClick">
+<MudCard>
+	<MudStack >
+		<MudButton OnClick="@OnButtonClick">
 			<h3>@Company</h3>
-		</FluentButton>
+		</MudButton>
 		@if (@Revealed)
 		{
-			<FluentStack Orientation="Orientation.Horizontal" Width="70%">
+			<MudStack Row="@true">
 				<strong>@Role</strong>
-				<FluentSpacer></FluentSpacer>
+				<MudSpacer></MudSpacer>
 				<strong>@DateRange</strong>
-			</FluentStack>
+			</MudStack>
 			<div>@ChildContent</div>
 		}
-	</FluentStack>
-</FluentCard>
+	</MudStack>
+</MudCard>
 
 
 @code {

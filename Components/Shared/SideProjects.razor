@@ -1,6 +1,6 @@
 ﻿
 
-<FluentStack Orientation="Orientation.Vertical">
+<MudStack >
 	<h3>I love doing side projects to grow my skills in ways that I cannot at work</h3>
 
 	<ProjectBox Title="Internal Blizzard Mentoring Website">
@@ -16,7 +16,7 @@
 
 	<ProjectBox Title="Game Jams (12+)">
 		<p>
-			I always come back to game jams <FluentIcon Value="@(new Icons.Regular.Size16.Heart())" />
+			I always come back to game jams/>
 		</p>
 		<p>
 			Participated in and/or coached over a dozen game jams
@@ -24,12 +24,12 @@
 			children for Blizzard’s yearly internal game jam:
 			Hungry Hungry Hamsters
 		</p>
-		<FluentStack Orientation="Orientation.Vertical">
+		<MudStack >
 			<a href="@HungryHamstersLink">Hungry Hamsters</a>
 			<a Href="@HungryHamstersLink">
 				<img src="images/HungryHungryHamsters.png" alt="Hungry Hungry Hamsters Logo" style="width:200px;height:200px;">
 			</a>
-		</FluentStack>
+		</MudStack>
 	</ProjectBox>
 
 	<ProjectBox Title="Linux server explorations">
@@ -49,12 +49,12 @@
 			DocFX-Generated Documentation
 		</p>
 		<a href="@DraftyDocumentationLink">Drafty</a>
-		<FluentStack Orientation="Orientation.Horizontal">
+		<MudStack Row="@true">
 			<DraftyDiagram />
 			<a Href="@DraftyDocumentationLink">
 				<img src="images/DraftyIcon.png" alt="Drafty Icon" style="width:200px;height:200px;"/>
 			</a>
-		</FluentStack>
+		</MudStack>
 	</ProjectBox>
 
 	<ProjectBox Title="This website">
@@ -62,7 +62,7 @@
 			This website is all SSR in Blazor.  That has been a fun challenge to learn the strengths and weaknesses of Blazor.
 		</p>
 	</ProjectBox>
-</FluentStack>
+</MudStack>
 
 
 @code {

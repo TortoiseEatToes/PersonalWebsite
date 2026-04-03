@@ -1,33 +1,93 @@
 ﻿@inherits LayoutComponentBase
 
-<FluentStack Class="main" Orientation="Orientation.Vertical">
-    <FluentBodyContent Class="body-content">
-        <div class="content">
-            <FluentStack Orientation="Orientation.Vertical" 
-                HorizontalAlignment="HorizontalAlignment.Center" 
-                VerticalAlignment="VerticalAlignment.Center">
-                <NavigationButtons ProjectsAppearance="@ProjectsAppearance"
-                                   CareerAppearance="@CareerAppearance" />
-                @Body
-            </FluentStack>
-        </div>
-    </FluentBodyContent>
-    <br />
-    <PersonalFooter />
-</FluentStack>
+<MudThemeProvider Theme="@_theme" IsDarkMode="_isDarkMode" />
+<MudPopoverProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
 
-<div id="blazor-error-ui" data-nosnippet>
-    An unhandled error has occurred.
-    <a href="." class="reload">Reload</a>
-    <span class="dismiss">🗙</span>
-</div>
+<MudLayout>
+    <MudAppBar Elevation="1">
+        <MudStack Row="@true">
+            <HomeButton/>
+            <MudLink Href="/AboutMe">About Me</MudLink>
+            <MudLink Href="/Blog">Blog</MudLink>
+            <MudLink Href="/Career">Career</MudLink>
+            <MudLink Href="/Projects">Projects</MudLink>
+        </MudStack>
+        <MudSpacer />
+        <MudIconButton Icon="@(DarkLightModeButtonIcon)" Color="Color.Inherit" OnClick="@DarkModeToggle" />
+    </MudAppBar>
+
+    <MudMainContent Class="pt-16 pa-4">
+        @Body
+        <HomeButton />
+    </MudMainContent>
+</MudLayout>
 
 @code {
-    protected virtual Appearance ProjectsAppearance { get; } = DefaultAppearance;
+    private bool _isDarkMode = true;
+    private MudTheme? _theme;
 
-    protected virtual Appearance CareerAppearance { get; } = DefaultAppearance;
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
 
-    static protected Appearance ClickedAppearance { get; } = Appearance.Outline;
+        _theme = new()
+        {
+            PaletteLight = _lightPalette,
+            PaletteDark = _darkPalette,
+            LayoutProperties = new LayoutProperties()
+        };
+    }
 
-    static protected Appearance DefaultAppearance { get; } = Appearance.Neutral;
+    private void DarkModeToggle()
+    {
+        _isDarkMode = !_isDarkMode;
+    }
+
+    private readonly PaletteLight _lightPalette = new()
+    {
+        Black = "#110e2d",
+        AppbarText = "#424242",
+        AppbarBackground = "rgba(255,255,255,0.8)",
+        DrawerBackground = "#ffffff",
+        GrayLight = "#e8e8e8",
+        GrayLighter = "#f9f9f9",
+    };
+
+    private readonly PaletteDark _darkPalette = new()
+    {
+        Primary = "#7e6fff",
+        Surface = "#1e1e2d",
+        Background = "#1a1a27",
+        BackgroundGray = "#151521",
+        AppbarText = "#92929f",
+        AppbarBackground = "rgba(26,26,39,0.8)",
+        DrawerBackground = "#1a1a27",
+        ActionDefault = "#74718e",
+        ActionDisabled = "#9999994d",
+        ActionDisabledBackground = "#605f6d4d",
+        TextPrimary = "#b2b0bf",
+        TextSecondary = "#92929f",
+        TextDisabled = "#ffffff33",
+        DrawerIcon = "#92929f",
+        DrawerText = "#92929f",
+        GrayLight = "#2a2833",
+        GrayLighter = "#1e1e2d",
+        Info = "#4a86ff",
+        Success = "#3dcb6c",
+        Warning = "#ffb545",
+        Error = "#ff3f5f",
+        LinesDefault = "#33323e",
+        TableLines = "#33323e",
+        Divider = "#292838",
+        OverlayLight = "#1e1e2d80",
+    };
+
+    public string DarkLightModeButtonIcon => _isDarkMode switch
+    {
+        true => Icons.Material.Rounded.AutoMode,
+        false => Icons.Material.Outlined.DarkMode,
+    };
 }
+

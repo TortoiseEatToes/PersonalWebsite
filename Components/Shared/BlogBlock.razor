@@ -1,14 +1,14 @@
-﻿<FluentCard>
-	<FluentStack Orientation="Orientation.Vertical">
-		<FluentButton Appearance="Appearance.Stealth" OnClick="@OnButtonClick">
+﻿<MudCard>
+	<MudStack >
+		<MudButton OnClick="@OnButtonClick">
 			@Title
-		</FluentButton>
+		</MudButton>
 		@if (@Revealed)
 		{
 			<div>@ChildContent</div>
 		}
-	</FluentStack>
-</FluentCard>
+	</MudStack>
+</MudCard>
 
 
 @code {

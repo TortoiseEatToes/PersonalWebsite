@@ -1,0 +1,18 @@
+﻿<MudChart ChartType="ChartType.Bar" ChartSeries="@Series" ChartLabels="@XAxisLabels"
+          ChartOptions="@Options" Height="300px">
+</MudChart>
+
+@code {
+    public List<ChartSeries<double>> Series = new()
+    {
+        new() { Name = "Server", Data = new double[] { 3d , 8d} },
+        new() { Name = "Server Non Game", Data = new double[] { 1d, 1d } },
+    };
+    
+    public string[] XAxisLabels = { "Container Size (Gb)", "Cluster Install Times (minutes)" };
+
+    public BarChartOptions Options = new()
+    {
+        YAxisTicks = 1
+    };
+}
