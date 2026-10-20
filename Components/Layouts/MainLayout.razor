@@ -20,7 +20,10 @@
 
     <MudMainContent Class="pt-16 pa-4">
         @Body
-        <HomeButton />
+        <MudStack Row=true>
+            <HomeButton />
+            <MudLink>Itch</MudLink>
+        </MudStack>
     </MudMainContent>
 </MudLayout>
 
@@ -86,7 +89,7 @@
 
     public string DarkLightModeButtonIcon => _isDarkMode switch
     {
-        true => Icons.Material.Rounded.AutoMode,
+        true => Icons.Material.Filled.WbSunny,
         false => Icons.Material.Outlined.DarkMode,
     };
 }
