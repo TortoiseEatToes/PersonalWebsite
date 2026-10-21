@@ -1,0 +1,24 @@
+﻿<MudStack Justify="Justify.Center">
+	<h1 style="text-align: center;">@Title</h1>
+	<a Href="@Href">
+		<img src=@Source alt=@Alt style="max-width: 100%;">
+	</a>
+	@ChildContent
+</MudStack>
+
+@code {
+	[Parameter]
+	public string Title { get; set; } = "Title not set";
+
+	[Parameter]
+	public string Source { get; set; } = "images/Kittens.jpg";
+
+	[Parameter]
+	public string Href { get; set; } = "";
+
+	[Parameter]
+	public string Alt { get; set; } = "Alt Name";
+
+	[Parameter]
+	public RenderFragment? ChildContent { get; set; }
+}
