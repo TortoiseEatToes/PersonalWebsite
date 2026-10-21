@@ -1,8 +1,10 @@
 ﻿<MudStack>
 	<h1 style="text-align: center;">@Title</h1>
-	<MudLink Href=@Href style="width: fit-content;">
-		<img src=@Source alt=@Title style="max-width: 100%; vertical-align: middle;">
-	</MudLink>
+	<div style="display: flex; justify-content: center;">
+		<MudLink Href=@Href style="width: fit-content;">
+			<img src=@Source alt=@Title style="max-width: 100%;">
+		</MudLink>
+	</div>
 	@ChildContent
 </MudStack>
 
