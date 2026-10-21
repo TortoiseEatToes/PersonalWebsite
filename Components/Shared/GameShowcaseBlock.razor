@@ -1,7 +1,7 @@
-﻿<MudStack Justify="Justify.Center">
+﻿<MudStack>
 	<h1 style="text-align: center;">@Title</h1>
-	<MudLink Href=@Href>
-		<img src=@Source alt=@Title style="max-width: 100%;">
+	<MudLink Href=@Href style="width: fit-content;">
+		<img src=@Source alt=@Title style="max-width: 100%; vertical-align: middle;">
 	</MudLink>
 	@ChildContent
 </MudStack>
