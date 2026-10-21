@@ -1,8 +1,8 @@
 ﻿<MudStack Justify="Justify.Center">
 	<h1 style="text-align: center;">@Title</h1>
-	<a Href="@Href">
-		<img src=@Source alt=@Alt style="max-width: 100%;">
-	</a>
+	<MudLink Href=@Href>
+		<img src=@Source alt=@Title style="max-width: 100%;">
+	</MudLink>
 	@ChildContent
 </MudStack>
 
@@ -15,9 +15,6 @@
 
 	[Parameter]
 	public string Href { get; set; } = "";
-
-	[Parameter]
-	public string Alt { get; set; } = "Alt Name";
 
 	[Parameter]
 	public RenderFragment? ChildContent { get; set; }
