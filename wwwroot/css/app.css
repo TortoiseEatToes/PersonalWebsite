@@ -62,7 +62,7 @@ html, body {
     content: "An error has occurred."
 }
 
-.loaing-animation {
+.loading-animation {
     display: grid;
     place-items: center;
 }
