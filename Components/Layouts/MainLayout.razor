@@ -1,6 +1,6 @@
 ﻿@inherits LayoutComponentBase
 
-<MudThemeProvider Theme="@_theme" IsDarkMode="_isDarkMode" />
+<MudThemeProvider Theme="@_theme" IsDarkMode=true />
 <MudPopoverProvider />
 <MudDialogProvider />
 <MudSnackbarProvider />
@@ -14,8 +14,6 @@
             <MudLink Href="Career">Career</MudLink>
             <MudLink Href="Projects">Projects</MudLink>
         </MudStack>
-        <MudSpacer />
-        <MudIconButton Icon="@(DarkLightModeButtonIcon)" Color="Color.Inherit" OnClick="@DarkModeToggle" />
     </MudAppBar>
 
     <MudMainContent Class="pt-16 pa-4">
@@ -29,27 +27,14 @@
 </MudLayout>
 
 @code {
-    private bool _isDarkMode = true;
-    private MudTheme? _theme;
-
-    protected override void OnInitialized()
+    private MudTheme? _theme = new()
     {
-        base.OnInitialized();
+        PaletteLight = LightPalette,
+        PaletteDark = DarkPalette,
+        LayoutProperties = new LayoutProperties()
+    };
 
-        _theme = new()
-        {
-            PaletteLight = _lightPalette,
-            PaletteDark = _darkPalette,
-            LayoutProperties = new LayoutProperties()
-        };
-    }
-
-    private void DarkModeToggle()
-    {
-        _isDarkMode = !_isDarkMode;
-    }
-
-    private readonly PaletteLight _lightPalette = new()
+    private static readonly PaletteLight LightPalette = new()
     {
         Black = "#110e2d",
         AppbarText = "#424242",
@@ -59,7 +44,7 @@
         GrayLighter = "#f9f9f9",
     };
 
-    private readonly PaletteDark _darkPalette = new()
+    private static readonly PaletteDark DarkPalette = new()
     {
         Primary = "#7e6fff",
         Surface = "#1e1e2d",
@@ -86,12 +71,6 @@
         TableLines = "#33323e",
         Divider = "#292838",
         OverlayLight = "#1e1e2d80",
-    };
-
-    public string DarkLightModeButtonIcon => _isDarkMode switch
-    {
-        true => Icons.Material.Filled.WbSunny,
-        false => Icons.Material.Outlined.DarkMode,
     };
 }
 
