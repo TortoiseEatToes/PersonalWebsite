@@ -4,28 +4,47 @@
 
 <div class="fadeIn">
 	<MudStack>
-		<GameShowcaseImageBlock Title="Diablo V">
+		<GameShowcaseImageBlock Title="Diablo V" DescriptionBlocks=@Diablo5Description>
 			<YouTubeEmbed Source="https://www.youtube.com/embed/GxCN_AKYtts?si=s4NERdYbYDMN4CQP" />
 		</GameShowcaseImageBlock>
 
-		<GameShowcaseImageBlock Title="Diablo IV">
+		<MudSpacer />
+
+		<GameShowcaseImageBlock Title="Diablo IV" DescriptionBlocks=@Diablo4Description>
 			<YouTubeEmbed Source="https://www.youtube.com/embed/3t1WJsFXY-8?si=p-J05T7OyCSLeY0u" />
 		</GameShowcaseImageBlock>
 
-		<GameShowcaseImageBlock Title="Hungry Hungry Hamsters">
+		<MudSpacer />
+
+		<GameShowcaseImageBlock Title="Hungry Hungry Hamsters" DescriptionBlocks=@HungryHungryDescription>
 			<LinkedImage Href="https://ninehearts.itch.io/hamsters" Source="images/HungryHungryHamsters.png" />
 		</GameShowcaseImageBlock>
 
-		<GameShowcaseImageBlock Title="Garden Of Reverie">
+		<MudSpacer />
+
+		<GameShowcaseImageBlock Title="Garden Of Reverie" DescriptionBlocks=@GardenOfReverieDescription>
 			<LinkedImage Href="https://tortoiseeattoes.itch.io/garden-of-reverie" Source="images/GardenOfReverie.png" />
 		</GameShowcaseImageBlock>
 
-		<GameShowcaseImageBlock Title="Desperate Measures">
+		<MudSpacer />
+
+		<GameShowcaseImageBlock Title="Desperate Measures" DescriptionBlocks=@DesperateMeasuresDescription>
 			<LinkedImage Href="https://tortoiseeattoes.itch.io/desperate-measures" Source="images/DesperateMeasures.png" />
-		</GameShowcaseImageBlock>S
+		</GameShowcaseImageBlock>
 	</MudStack>
 </div>
 
 
 @code {
+	private readonly List<string> Diablo5Description = ["I started working fully on Diablo 5 in 2025.", 
+														"I've done a bunch of work on our automated testing framework."];
+
+	private readonly List<string> Diablo4Description = ["I started on Diablo 4 back in 2020.", 
+														"Mention the digital foundry video and the game jam."];
+
+	private readonly List<string> HungryHungryDescription = ["Blizzard game jam"];
+
+	private readonly List<string> GardenOfReverieDescription = [@"This is our desynchronous game jame game where we made a multiplayer game with no real time networking component."];
+
+	private readonly List<string> DesperateMeasuresDescription = ["First game jam where I experimented with pikmin player controller."];
 }

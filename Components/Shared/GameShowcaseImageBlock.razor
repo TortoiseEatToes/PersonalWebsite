@@ -3,11 +3,18 @@
 	<div style="display: flex; justify-content: center;">
 		@ChildContent
 	</div>
+	@foreach (var description in DescriptionBlocks)
+	{
+		<p style="text-align: center;">@description</p>
+	}
 </MudStack>
 
 @code {
 	[Parameter]
 	public string Title { get; set; } = "Title not set";
+
+	[Parameter]
+	public List<string> DescriptionBlocks { get; set; } = [];
 
 	[Parameter]
 	public RenderFragment? ChildContent { get; set; }
