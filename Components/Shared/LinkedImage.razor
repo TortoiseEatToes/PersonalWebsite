@@ -1,0 +1,14 @@
+﻿<MudLink Href=@Href style="width: fit-content;">
+	<img src=@Source alt=@Alt style="max-width: 100%;">
+</MudLink>
+
+@code {
+	[Parameter]
+	public string Href { get; set; } = "https://diablo5.blizzard.com/en-us";
+
+	[Parameter]
+	public string Source { get; set; } = "images/D5_Logo.jpg";
+
+	[Parameter]
+	public string Alt { get; set; } = "Diablo V";
+}

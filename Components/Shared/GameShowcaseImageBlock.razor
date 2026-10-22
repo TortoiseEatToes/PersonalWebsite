@@ -1,22 +1,13 @@
 ﻿<MudStack>
 	<h1 style="text-align: center;">@Title</h1>
 	<div style="display: flex; justify-content: center;">
-		<MudLink Href=@Href style="width: fit-content;">
-			<img src=@Source alt=@Title style="max-width: 100%;">
-		</MudLink>
+		@ChildContent
 	</div>
-	@ChildContent
 </MudStack>
 
 @code {
 	[Parameter]
 	public string Title { get; set; } = "Title not set";
-
-	[Parameter]
-	public string Source { get; set; } = "images/Kittens.jpg";
-
-	[Parameter]
-	public string Href { get; set; } = "";
 
 	[Parameter]
 	public RenderFragment? ChildContent { get; set; }
