@@ -1,18 +1,15 @@
-﻿
-<div class="center">
-	<MudPaper style="width: 90%; max-width: 1200px">
-		<MudStack style="margin: 20px;">
-			<h1 style="text-align: center;">@Title</h1>
-			<div class="center">
-				@ChildContent
-			</div>
-			@foreach (var description in DescriptionBlocks)
-			{
-				<p style="text-align: center;">@description</p>
-			}
-		</MudStack>
-	</MudPaper>
-</div>
+﻿<MudPaper style=@Style>
+	<MudStack style="margin: 20px;">
+		<h1 style="text-align: center;">@Title</h1>
+		<div class="center">
+			@ChildContent
+		</div>
+		@foreach (var description in DescriptionBlocks)
+		{
+			<p style="text-align: center;">@description</p>
+		}
+	</MudStack>
+</MudPaper>
 
 @code {
 	[Parameter]
@@ -20,6 +17,9 @@
 
 	[Parameter]
 	public List<string> DescriptionBlocks { get; set; } = [];
+	
+	[Parameter]
+	public string? Style { get; set; }
 
 	[Parameter]
 	public RenderFragment? ChildContent { get; set; }
