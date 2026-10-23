@@ -6,9 +6,9 @@
 <MudSnackbarProvider />
 
 <MudLayout>
-    <MudAppBar Elevation="1">
+    <MudAppBar Dense="false">
         <MudStack Row="@true">
-            <HomeButton/>
+            <HomeButton />
             <MudLink Href="AboutMe">About Me</MudLink>
             <MudLink Href="Blog">Blog</MudLink>
             <MudLink Href="Career">Career</MudLink>
@@ -18,16 +18,18 @@
 
     <MudMainContent Class="pt-16 pa-4">
         @Body
-        <MudStack Row=true>
-            <HomeButton />
-            <MudLink Href="https://tortoiseeattoes.itch.io">Itch.io</MudLink>
-            <MudLink Href="https://github.com/TortoiseEatToes">GitHub</MudLink>
-        </MudStack>
+        <div style="display: flex; justify-content: center; align-items: center; position: relative; top: 20px; margin-bottom: 30px;">
+            <MudStack Row=true>
+                <HomeButton />
+                <MudLink Href="https://tortoiseeattoes.itch.io">Itch.io</MudLink>
+                <MudLink Href="https://github.com/TortoiseEatToes">GitHub</MudLink>
+            </MudStack>
+        </div>
     </MudMainContent>
 </MudLayout>
 
 @code {
-    private MudTheme? _theme = new()
+    private MudTheme _theme = new()
     {
         PaletteLight = LightPalette,
         PaletteDark = DarkPalette,
