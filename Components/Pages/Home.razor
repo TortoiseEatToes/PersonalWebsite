@@ -3,20 +3,18 @@
 <PageTitle>Home</PageTitle>
 
 <div class="fadeIn">
-	<MudStack class="pb-10">
-		<MudStack>
-			<div class="center">
-				<h1 style="max-width: 90%">I'm Sara Asmusen and I make software tools and systems! I'm currently working on Diablo V.</h1>
-			</div>
+	<MudStack class="pb-10 pt-10">
+		<div class="center">
+			<h1 style="max-width: 90%">I'm Sara Asmusen and I make software tools and systems! I'm currently working on Diablo V.</h1>
+		</div>
 
-			<div style="max-width: 50%">
+		<MudGrid Justify="Justify.Center">
+			<MudItem xs="12" Style=@ShowcaseGridStyle>
 				<GameShowcaseImageBlock Title="Diablo V" DescriptionBlocks=@Diablo5Description>
 					<YouTubeEmbed Source="https://www.youtube.com/embed/GxCN_AKYtts?si=s4NERdYbYDMN4CQP" />
 				</GameShowcaseImageBlock>
-			</div>
-		</MudStack>
+			</MudItem>
 
-		<MudGrid Justify="Justify.Center">
 			<MudItem Style=@ShowcaseGridStyle>
 				<GameShowcaseImageBlock Title="Diablo IV" DescriptionBlocks=@Diablo4Description>
 					<YouTubeEmbed Source="https://www.youtube.com/embed/3t1WJsFXY-8?si=p-J05T7OyCSLeY0u" />
