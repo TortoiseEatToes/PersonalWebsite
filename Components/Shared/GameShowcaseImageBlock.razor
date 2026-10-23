@@ -1,15 +1,18 @@
-﻿<MudCard>
-	<MudStack>
-		<h1 style="text-align: center;">@Title</h1>
-		<div style="display: flex; justify-content: center;">
-			@ChildContent
-		</div>
-		@foreach (var description in DescriptionBlocks)
-		{
-			<p style="text-align: center;">@description</p>
-		}
-	</MudStack>
-</MudCard>
+﻿
+<div class="center">
+	<MudCard style="width: 70%">
+		<MudStack>
+			<h1 style="text-align: center;">@Title</h1>
+			<div class="center">
+				@ChildContent
+			</div>
+			@foreach (var description in DescriptionBlocks)
+			{
+				<p style="text-align: center;">@description</p>
+			}
+		</MudStack>
+	</MudCard>
+</div>
 
 @code {
 	[Parameter]
