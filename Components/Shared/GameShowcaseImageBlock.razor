@@ -1,4 +1,4 @@
-﻿<MudPaper style=@Style>
+﻿<MudPaper style="width: 100%; height: 100%">
 	<MudStack style="margin: 20px;">
 		<h1 style="text-align: center;">@Title</h1>
 		<div class="center">
@@ -17,9 +17,6 @@
 
 	[Parameter]
 	public List<string> DescriptionBlocks { get; set; } = [];
-	
-	[Parameter]
-	public string? Style { get; set; }
 
 	[Parameter]
 	public RenderFragment? ChildContent { get; set; }

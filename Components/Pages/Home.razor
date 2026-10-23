@@ -5,40 +5,38 @@
 <div class="fadeIn">
 	<MudStack>
 		<MudStack>
-			<h1 style="max-width: 90%; text-align: center; justify-content: center;">I'm Sara Asmusen and I make software tools and systems! I'm currently working on Diablo V.</h1>
+			<div class="center">
+				<h1 style="max-width: 90%">I'm Sara Asmusen and I make software tools and systems! I'm currently working on Diablo V.</h1>
+			</div>
 
-			<GameShowcaseImageBlock Title="Diablo V" DescriptionBlocks=@Diablo5Description
-									Style="
-				width: 1000px;
-				max-width: 90%;
-				display: flex;
-				justify-content: center;
-				align-items: center">
-				<YouTubeEmbed Source="https://www.youtube.com/embed/GxCN_AKYtts?si=s4NERdYbYDMN4CQP" />
-			</GameShowcaseImageBlock>
+			<div style="max-width: 50%">
+				<GameShowcaseImageBlock Title="Diablo V" DescriptionBlocks=@Diablo5Description>
+					<YouTubeEmbed Source="https://www.youtube.com/embed/GxCN_AKYtts?si=s4NERdYbYDMN4CQP" />
+				</GameShowcaseImageBlock>
+			</div>
 		</MudStack>
 
 		<MudGrid Justify="Justify.Center">
-			<MudItem>
-				<GameShowcaseImageBlock Title="Diablo IV" DescriptionBlocks=@Diablo4Description Style=@ShowcaseGridStyle>
+			<MudItem Style=@ShowcaseGridStyle>
+				<GameShowcaseImageBlock Title="Diablo IV" DescriptionBlocks=@Diablo4Description>
 					<YouTubeEmbed Source="https://www.youtube.com/embed/3t1WJsFXY-8?si=p-J05T7OyCSLeY0u" />
 				</GameShowcaseImageBlock>
 			</MudItem>
 
-			<MudItem>
-				<GameShowcaseImageBlock Title="Hungry Hungry Hamsters" DescriptionBlocks=@HungryHungryDescription Style=@ShowcaseGridStyle>
+			<MudItem Style=@ShowcaseGridStyle>
+				<GameShowcaseImageBlock Title="Hungry Hungry Hamsters" DescriptionBlocks=@HungryHungryDescription>
 					<LinkedImage Href="https://ninehearts.itch.io/hamsters" Source="images/HungryHungryHamsters.png" />
 				</GameShowcaseImageBlock>
 			</MudItem>
 
-			<MudItem>
-				<GameShowcaseImageBlock Title="Garden Of Reverie" DescriptionBlocks=@GardenOfReverieDescription Style=@ShowcaseGridStyle>
+			<MudItem Style=@ShowcaseGridStyle>
+				<GameShowcaseImageBlock Title="Garden Of Reverie" DescriptionBlocks=@GardenOfReverieDescription>
 					<LinkedImage Href="https://tortoiseeattoes.itch.io/garden-of-reverie" Source="images/GardenOfReverie.png" />
 				</GameShowcaseImageBlock>
 			</MudItem>
 
-			<MudItem>
-				<GameShowcaseImageBlock Title="Desperate Measures" DescriptionBlocks=@DesperateMeasuresDescription Style=@ShowcaseGridStyle>
+			<MudItem Style=@ShowcaseGridStyle>
+				<GameShowcaseImageBlock Title="Desperate Measures" DescriptionBlocks=@DesperateMeasuresDescription>
 					<LinkedImage Href="https://tortoiseeattoes.itch.io/desperate-measures" Source="images/DesperateMeasures.png" />
 				</GameShowcaseImageBlock>
 			</MudItem>
