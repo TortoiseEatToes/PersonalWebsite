@@ -4,27 +4,37 @@
 
 <div class="fadeIn">
 	<MudStack>
-		<h1 style="text-align: center">I'm Sara Asmusen and I make software tools and systems!</h1>
+		<h1 style="text-align: center">I'm Sara Asmusen and I make software tools and systems! I'm currently working on Diablo V.</h1>
 
 		<GameShowcaseImageBlock Title="Diablo V" DescriptionBlocks=@Diablo5Description>
-			<YouTubeEmbed Source="https://www.youtube.com/embed/GxCN_AKYtts?si=s4NERdYbYDMN4CQP" />
+			<YouTubeEmbed Source="https://www.youtube.com/embed/GxCN_AKYtts?si=s4NERdYbYDMN4CQP"/>
 		</GameShowcaseImageBlock>
 
-		<GameShowcaseImageBlock Title="Diablo IV" DescriptionBlocks=@Diablo4Description>
-			<YouTubeEmbed Source="https://www.youtube.com/embed/3t1WJsFXY-8?si=p-J05T7OyCSLeY0u" />
-		</GameShowcaseImageBlock>
+		<MudGrid>
+			<MudItem>
+				<GameShowcaseImageBlock Title="Diablo IV" DescriptionBlocks=@Diablo4Description>
+					<YouTubeEmbed Source="https://www.youtube.com/embed/3t1WJsFXY-8?si=p-J05T7OyCSLeY0u" />
+				</GameShowcaseImageBlock>
+			</MudItem>
 
-		<GameShowcaseImageBlock Title="Hungry Hungry Hamsters" DescriptionBlocks=@HungryHungryDescription>
-			<LinkedImage Href="https://ninehearts.itch.io/hamsters" Source="images/HungryHungryHamsters.png" />
-		</GameShowcaseImageBlock>
+			<MudItem>
+				<GameShowcaseImageBlock Title="Hungry Hungry Hamsters" DescriptionBlocks=@HungryHungryDescription>
+					<LinkedImage Href="https://ninehearts.itch.io/hamsters" Source="images/HungryHungryHamsters.png" />
+				</GameShowcaseImageBlock>
+			</MudItem>
 
-		<GameShowcaseImageBlock Title="Garden Of Reverie" DescriptionBlocks=@GardenOfReverieDescription>
-			<LinkedImage Href="https://tortoiseeattoes.itch.io/garden-of-reverie" Source="images/GardenOfReverie.png" />
-		</GameShowcaseImageBlock>
+			<MudItem>
+				<GameShowcaseImageBlock Title="Garden Of Reverie" DescriptionBlocks=@GardenOfReverieDescription>
+					<LinkedImage Href="https://tortoiseeattoes.itch.io/garden-of-reverie" Source="images/GardenOfReverie.png" />
+				</GameShowcaseImageBlock>
+			</MudItem>
 
-		<GameShowcaseImageBlock Title="Desperate Measures" DescriptionBlocks=@DesperateMeasuresDescription>
-			<LinkedImage Href="https://tortoiseeattoes.itch.io/desperate-measures" Source="images/DesperateMeasures.png" />
-		</GameShowcaseImageBlock>
+			<MudItem>
+				<GameShowcaseImageBlock Title="Desperate Measures" DescriptionBlocks=@DesperateMeasuresDescription>
+					<LinkedImage Href="https://tortoiseeattoes.itch.io/desperate-measures" Source="images/DesperateMeasures.png" />
+				</GameShowcaseImageBlock>
+			</MudItem>
+		</MudGrid>
 	</MudStack>
 </div>
 
@@ -36,9 +46,10 @@
 	private readonly List<string> Diablo4Description = ["I started on Diablo 4 back in 2020.", 
 														"Mention the digital foundry video and the game jam."];
 
-	private readonly List<string> HungryHungryDescription = ["Blizzard game jam"];
+	private readonly List<string> HungryHungryDescription = ["Blizzard game jam", "Line 2"];
 
-	private readonly List<string> GardenOfReverieDescription = [@"This is our desynchronous game jame game where we made a multiplayer game with no real time networking component."];
+	private readonly List<string> GardenOfReverieDescription = [@"This is our desynchronous game jame game where we made a multiplayer game with no real time networking component.", "Line 2"];
 
-	private readonly List<string> DesperateMeasuresDescription = ["First game jam where I experimented with pikmin player controller."];
+	private readonly List<string> DesperateMeasuresDescription = ["First game jam where I experimented with pikmin player controller.",
+																  "Line 2"];
 }
