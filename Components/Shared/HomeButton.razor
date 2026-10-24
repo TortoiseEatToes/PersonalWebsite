@@ -1,8 +1,12 @@
-﻿
-<MudLink Href="/" title="Jump to home">
+﻿@inject NavigationManager NavigationManager
+
+<MudLink Href=@GetBaseAddress() title="Jump to home">
     Home
 </MudLink>
 
 @code {
-
+    private string GetBaseAddress()
+    {
+        return NavigationManager.BaseUri;
+    }
 }
