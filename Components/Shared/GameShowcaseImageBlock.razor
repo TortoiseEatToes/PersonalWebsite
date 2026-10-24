@@ -1,12 +1,12 @@
 ﻿<MudPaper style="width: 100%; height: 100%">
 	<MudStack style="margin: 20px;">
-		<h1 style="text-align: center;">@Title</h1>
+		<MudText Typo="Typo.h5" style="text-align: center;">@Title</MudText>
 		<div class="center">
 			@ChildContent
 		</div>
 		@foreach (var description in DescriptionBlocks)
 		{
-			<p style="text-align: center;">@description</p>
+			<MudText Typo="Typo.body1" style="text-align: center;">@description</MudText>
 		}
 	</MudStack>
 </MudPaper>
