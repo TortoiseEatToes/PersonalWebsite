@@ -47,7 +47,7 @@ jobs:
         run: dotnet publish PersonalWebsite.csproj -c Release
 
       - name: set release date
-        run: echo "RELEASE_DATE=$(date --rfc-3339=date)" >> ${GITHUB_ENV}
+        run: echo "RELEASE_DATE=$(date --rfc-3339=seconds)" >> ${GITHUB_ENV}
 
       - name: Replace timestamp metadata
         run: sed -i 's/CURRENT_TIME/${{ env.RELEASE_DATE }}/g' ${{ env.PUBLISH_DIR }}/index.html
