@@ -6,7 +6,7 @@
 <MudSnackbarProvider />
 
 <MudLayout>
-    <MudAppBar Dense="false">
+    <MudAppBar Dense="false" class="center">
         <MudStack Row="@true">
             <HomeButton />
             <MudLink Href="AboutMe">About Me</MudLink>
@@ -14,13 +14,6 @@
             <MudLink Href="Career">Career</MudLink>
             <MudLink Href="Projects">Projects</MudLink>
         </MudStack>
-        <MudTabs Outlined="false" Ripple="true" Rounded="true" >
-            <MudTabPanel Text="Home" Icon="@Icons.Material.Filled.Api" />
-            <MudTabPanel Text="About Me" Icon="@Icons.Material.Filled.BugReport" />
-            <MudTabPanel Text="Blog" Icon="@Icons.Material.Filled.BugReport" />
-            <MudTabPanel Text="Career" Icon="@Icons.Material.Filled.BugReport" />
-            <MudTabPanel Text="Projects" Icon="@Icons.Material.Filled.BugReport" />
-        </MudTabs>
     </MudAppBar>
 
     <MudMainContent Class="pt-16 pa-4">
