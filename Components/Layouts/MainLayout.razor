@@ -10,9 +10,7 @@
         <MudStack Row="@true">
             <HomeButton />
             <MudLink Href="AboutMe">About Me</MudLink>
-            <MudLink Href="Blog">Blog</MudLink>
-            <MudLink Href="Career">Career</MudLink>
-            <MudLink Href="Projects">Projects</MudLink>
+            <MudLink Href="Blog" EndIcon="@Icons.Material.Rounded.Book">Blog</MudLink>
         </MudStack>
     </MudAppBar>
 
@@ -41,10 +39,8 @@
     private record FooterLink(string Href, string Icon);
 
     private static readonly List<FooterLink> FooterLinks = [
-        new ("https://x.com/TortoiseEatToes", Icons.Custom.Brands.Twitter),
         new ("https://github.com/TortoiseEatToes", Icons.Custom.Brands.GitHub),
         new ("https://www.linkedin.com/in/sara-asmussen-69a830155/", Icons.Custom.Brands.LinkedIn),
-        new ("https://www.youtube.com/@saraasmussen3346/", Icons.Custom.Brands.YouTube)
     ];
 
     private static readonly PaletteLight LightPalette = new()
