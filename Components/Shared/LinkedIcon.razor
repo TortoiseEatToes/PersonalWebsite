@@ -1,0 +1,14 @@
+﻿<MudLink Href=@Href style="width: fit-content;" Target="_blank">
+	<MudIcon Icon="@Icon" Size="@Size" />
+</MudLink>
+
+@code {
+	[Parameter]
+	public string Href { get; set; } = "https://mudblazor.com/components/icons";
+
+	[Parameter]
+	public string Icon { get; set; } = Icons.Custom.Uncategorized.Radioactive;
+
+	[Parameter]
+	public Size Size { get; set; } = Size.Large;
+}
