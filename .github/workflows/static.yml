@@ -2,6 +2,7 @@
 name: Deploy static content to Pages
 env:
   PUBLISH_DIR: bin/Release/net10.0/publish/wwwroot
+  RELEASE_DATE: date_not_set
 
 on:
   # Runs on pushes targeting the default branch for the app's folder path
@@ -44,6 +45,12 @@ jobs:
 
       - name: Publish app
         run: dotnet publish PersonalWebsite.csproj -c Release
+
+      - name: set release date
+        run: echo "RELEASE_DATE=$(date --rfc-3339=seconds)" >> ${GITHUB_ENV}
+
+      - name: Replace timestamp metadata
+        run: sed -i 's/CURRENT_TIME/${{ env.RELEASE_DATE }}/g' ${{ env.PUBLISH_DIR }}/index.html
 
       - name: Rewrite base href
         uses: SteveSandersonMS/ghaction-rewrite-base-href@5b54862a8831e012d4f1a8b2660894415fdde8ec # v1.1.0
