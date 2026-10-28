@@ -16,16 +16,16 @@
 
     <MudMainContent Class="pt-16 pa-4">
         @Body
-        <div style="display: flex; justify-content: center; align-items: center; position: relative; top: 20px; margin-bottom: 30px;">
-            <MudStack Row=true Spacing="8">
-                <MudLink Typo="Typo.h6" Href="https://tortoiseeattoes.itch.io">Itch.io</MudLink>
-                @foreach (var link in FooterLinks)
-                {
-                    <LinkedIcon Href=@link.Href Icon=@link.Icon />
-                }
-            </MudStack>
-        </div>
     </MudMainContent>
+
+    <div style="top: 20px; margin-bottom: 30px;">
+        <MudStack Row=true Justify="Justify.Center">
+            @foreach (var link in FooterLinks)
+            {
+                <MudFab Href="@link.Href" StartIcon="@link.Icon" Label="@link.Label" Variant="@Variant.Text" />
+            }
+        </MudStack>
+    </div>
 </MudLayout>
 
 @code {
@@ -36,9 +36,10 @@
         LayoutProperties = new LayoutProperties()
     };
 
-    private record FooterLink(string Href, string Icon);
+    private record FooterLink(string Href, string? Icon, string? Label = null);
 
     private static readonly List<FooterLink> FooterLinks = [
+        new ("https://tortoiseeattoes.itch.io", null, "Itch.io"),
         new ("https://github.com/TortoiseEatToes", Icons.Custom.Brands.GitHub),
         new ("https://www.linkedin.com/in/sara-asmussen-69a830155/", Icons.Custom.Brands.LinkedIn),
     ];
