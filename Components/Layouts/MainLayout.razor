@@ -6,8 +6,8 @@
 <MudSnackbarProvider />
 
 <MudLayout>
-    <MudAppBar Dense="false" class="center">
-        <MudStack Row="@true">
+    <MudAppBar class="center">
+        <MudStack Row=true>
             <HomeButton />
             <MudLink Href="AboutMe">About Me</MudLink>
             <MudLink Href="Blog" EndIcon="@Icons.Material.Rounded.Book">Blog</MudLink>
@@ -18,14 +18,14 @@
         @Body
     </MudMainContent>
 
-    <div style="top: 20px; margin-bottom: 30px;">
-        <MudStack Row=true Justify="Justify.Center">
+    <MudAppBar Bottom=true class="center" Fixed=false>
+        <MudStack Row=true>
             @foreach (var link in FooterLinks)
             {
                 <MudFab Href="@link.Href" StartIcon="@link.Icon" Label="@link.Label" Variant="@Variant.Text" />
             }
         </MudStack>
-    </div>
+    </MudAppBar>
 </MudLayout>
 
 @code {
