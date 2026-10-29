@@ -19,11 +19,11 @@
         <div style="margin-top: 45px; margin-bottom: 25px">
             <div class="center">
                 <MudStack Row=true Justify=Justify.SpaceEvenly AlignItems=@AlignItems.Center Spacing=10 style="max-width: 90%">
-                    @foreach (var link in FooterLinks)
+                    @foreach (var button in FooterButtons)
                     {
-                        <MudTooltip Text=@{$"Navigate to {@link.WebsiteName}"}>
-                            <MudButton Href=@link.Href Target="_blank" Variant="Variant.Filled" Class="rounded-xl">
-                                <MudIcon Icon=@link.Icon ViewBox=@link.ViewBox Size=Size.Large />
+                        <MudTooltip Text=@{$"Navigate to {button.WebsiteName}"}>
+                            <MudButton Href=@button.Href Target="_blank" Variant="Variant.Filled" Class="rounded-xl">
+                                <MudIcon Icon=@button.Icon ViewBox=@button.ViewBox Size=Size.Large />
                             </MudButton>
                         </MudTooltip>
                     }
@@ -43,7 +43,7 @@
 
     private record FooterLink(string WebsiteName, string Href, string Icon, string ViewBox = "0 0 24 24");
 
-    private static readonly List<FooterLink> FooterLinks = [
+    private static readonly List<FooterLink> FooterButtons = [
         new ("Itch.io", "https://tortoiseeattoes.itch.io", IconsItchIo, "0 0 245.371 220.736"),
         new ("GitHub","https://github.com/TortoiseEatToes", Icons.Custom.Brands.GitHub),
         new ("LinkedIn","https://www.linkedin.com/in/sara-asmussen-69a830155/", Icons.Custom.Brands.LinkedIn),
