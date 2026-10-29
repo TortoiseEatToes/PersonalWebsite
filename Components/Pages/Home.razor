@@ -2,45 +2,43 @@
 
 <PageTitle>Home</PageTitle>
 
-<div class="fadeIn">
-	<MudStack class="pb-10 pt-10">
-		<div class="center">
-			<MudText Typo="Typo.h5" style="max-width: 90%">I'm Sara Asmussen and I make software tools and systems! I'm currently working on Diablo V.</MudText>
-		</div>
+<MudStack class="pb-10 pt-10">
+	<div class="center">
+		<MudText Typo="Typo.h5" style="max-width: 90%">I'm Sara Asmussen and I make software tools and systems! I'm currently working on Diablo V.</MudText>
+	</div>
 
-		<MudGrid Justify="Justify.Center">
-			<MudItem xs="12" Style=@ShowcaseGridStyle>
-				<GameShowcaseImageBlock Title="Diablo V" DescriptionBlocks=@Diablo5Description>
-					<YouTubeEmbed Source="https://www.youtube.com/embed/GxCN_AKYtts?si=s4NERdYbYDMN4CQP" />
-				</GameShowcaseImageBlock>
-			</MudItem>
+	<MudGrid Justify="Justify.Center">
+		<MudItem xs="12" Style=@ShowcaseGridStyle>
+			<GameShowcaseImageBlock Title="Diablo V" DescriptionBlocks=@Diablo5Description>
+				<YouTubeEmbed Source="https://www.youtube.com/embed/GxCN_AKYtts?si=s4NERdYbYDMN4CQP" />
+			</GameShowcaseImageBlock>
+		</MudItem>
 
-			<MudItem Style=@ShowcaseGridStyle>
-				<GameShowcaseImageBlock Title="Diablo IV" DescriptionBlocks=@Diablo4Description>
-					<YouTubeEmbed Source="https://www.youtube.com/embed/3t1WJsFXY-8?si=p-J05T7OyCSLeY0u" />
-				</GameShowcaseImageBlock>
-			</MudItem>
+		<MudItem Style=@ShowcaseGridStyle>
+			<GameShowcaseImageBlock Title="Diablo IV" DescriptionBlocks=@Diablo4Description>
+				<YouTubeEmbed Source="https://www.youtube.com/embed/3t1WJsFXY-8?si=p-J05T7OyCSLeY0u" />
+			</GameShowcaseImageBlock>
+		</MudItem>
 
-			<MudItem Style=@ShowcaseGridStyle>
-				<GameShowcaseImageBlock Title="Hungry Hungry Hamsters" DescriptionBlocks=@HungryHungryDescription>
-					<LinkedImage Href="https://ninehearts.itch.io/hamsters" Source="images/HungryHungryHamsters.png" />
-				</GameShowcaseImageBlock>
-			</MudItem>
+		<MudItem Style=@ShowcaseGridStyle>
+			<GameShowcaseImageBlock Title="Hungry Hungry Hamsters" DescriptionBlocks=@HungryHungryDescription>
+				<LinkedImage Href="https://ninehearts.itch.io/hamsters" Source="images/HungryHungryHamsters.png" />
+			</GameShowcaseImageBlock>
+		</MudItem>
 
-			<MudItem Style=@ShowcaseGridStyle>
-				<GameShowcaseImageBlock Title="Garden Of Reverie" DescriptionBlocks=@GardenOfReverieDescription>
-					<LinkedImage Href="https://tortoiseeattoes.itch.io/garden-of-reverie" Source="images/GardenOfReverie.png" />
-				</GameShowcaseImageBlock>
-			</MudItem>
+		<MudItem Style=@ShowcaseGridStyle>
+			<GameShowcaseImageBlock Title="Garden Of Reverie" DescriptionBlocks=@GardenOfReverieDescription>
+				<LinkedImage Href="https://tortoiseeattoes.itch.io/garden-of-reverie" Source="images/GardenOfReverie.png" />
+			</GameShowcaseImageBlock>
+		</MudItem>
 
-			<MudItem Style=@ShowcaseGridStyle>
-				<GameShowcaseImageBlock Title="Desperate Measures" DescriptionBlocks=@DesperateMeasuresDescription>
-					<LinkedImage Href="https://tortoiseeattoes.itch.io/desperate-measures" Source="images/DesperateMeasures.png" />
-				</GameShowcaseImageBlock>
-			</MudItem>
-		</MudGrid>
-	</MudStack>
-</div>
+		<MudItem Style=@ShowcaseGridStyle>
+			<GameShowcaseImageBlock Title="Desperate Measures" DescriptionBlocks=@DesperateMeasuresDescription>
+				<LinkedImage Href="https://tortoiseeattoes.itch.io/desperate-measures" Source="images/DesperateMeasures.png" />
+			</GameShowcaseImageBlock>
+		</MudItem>
+	</MudGrid>
+</MudStack>
 
 
 @code {

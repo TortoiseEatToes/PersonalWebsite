@@ -2,9 +2,42 @@
 
 <PageTitle>AboutMe</PageTitle>
 
-<div class="fadeIn">
-	<AboutMeContent />
-</div>
+<MudStack>
+	<MudStack Row="@true">
+		<MudText Typo=Typo.h3>Hello!!!</MudText>
+		<img src="images/Tortoise_Wave.png" alt="Tortoise Wave Image" style="width:50px;height:50px;" />
+	</MudStack>
+
+	<MudText>My name is Sara Asmussen.  I go by TortoiseEatToes online.</MudText>
+
+	<MudText>
+		I enjoy making games, playing games, and practicing swordsmanship!!!
+	</MudText>
+
+	<MudDivider Style="height: 50px;"></MudDivider>
+	<MudText>EDUCATION</MudText>
+	<MudText>DePaul University, Chicago, IL</MudText>
+	<MudText> Bachelor of Science | Computer Science – Game Systems</MudText>
+	<MudText>
+		Independent study in college where my team and I created
+		our own game engine in C++
+		Created a task graph that uses a thread pool to execute all
+		our work
+		Helped set up the double buffers and tasks required to
+		convert our engine from DX11 to DX12
+		Added XAudio2 to our engine
+		Experimented with Data Oriented Designs for storing our
+		game object and graphics object components
+	</MudText>
+
+	<MudText>
+		Someday, once things calm down, I'm planning to go back to get my masters.
+	</MudText>
+
+	<MudText>As a parting gift, here is a picture of my silly goofballs Wisco and Disco</MudText>
+
+	<img src="images/Kittens.jpg" alt="Kittens Image" style="width:300px;height:300px;" />
+</MudStack>
 
 @code {
     
