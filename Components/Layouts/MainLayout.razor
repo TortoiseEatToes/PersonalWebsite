@@ -21,7 +21,7 @@
                 <MudStack Row=true Justify=Justify.SpaceEvenly AlignItems=@AlignItems.Center Spacing=10 style="max-width: 90%">
                     @foreach (var link in FooterLinks)
                     {
-                        <MudButton Variant="Variant.Filled" Class="rounded-xl">
+                        <MudButton Href=@link.Href Target="_blank" Variant="Variant.Filled" Class="rounded-xl">
                             <MudIcon Icon=@link.Icon ViewBox=@link.ViewBox/>
                         </MudButton>
                     }
