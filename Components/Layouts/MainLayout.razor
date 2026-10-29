@@ -16,16 +16,17 @@
 
     <MudMainContent Class="pt-16 pa-4">
         @Body
+        <div style="position: relative; top: 20px; margin-bottom: 30px;">
+            <div class="center">
+                <MudStack Row=true Justify=Justify.SpaceEvenly>
+                    @foreach (var link in FooterLinks)
+                    {
+                        <MudFab Href="@link.Href" StartIcon="@link.Icon" Label="@link.Label" Variant="@Variant.Text" />
+                    }
+                </MudStack>
+            </div>
+        </div>
     </MudMainContent>
-
-    <MudAppBar Bottom=true class="center" Fixed=false>
-        <MudStack Row=true>
-            @foreach (var link in FooterLinks)
-            {
-                <MudFab Href="@link.Href" StartIcon="@link.Icon" Label="@link.Label" Variant="@Variant.Text" />
-            }
-        </MudStack>
-    </MudAppBar>
 </MudLayout>
 
 @code {
