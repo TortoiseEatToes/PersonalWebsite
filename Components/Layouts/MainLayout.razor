@@ -21,9 +21,11 @@
                 <MudStack Row=true Justify=Justify.SpaceEvenly AlignItems=@AlignItems.Center Spacing=10 style="max-width: 90%">
                     @foreach (var link in FooterLinks)
                     {
-                        <MudButton Href=@link.Href Target="_blank" Variant="Variant.Filled" Class="rounded-xl">
-                            <MudIcon Icon=@link.Icon ViewBox=@link.ViewBox Size=Size.Large/>
-                        </MudButton>
+                        <MudTooltip Text=@{$"Navigate to {@link.WebsiteName}"}>
+                            <MudButton Href=@link.Href Target="_blank" Variant="Variant.Filled" Class="rounded-xl">
+                                <MudIcon Icon=@link.Icon ViewBox=@link.ViewBox Size=Size.Large />
+                            </MudButton>
+                        </MudTooltip>
                     }
                 </MudStack>
             </div>
@@ -39,12 +41,12 @@
         LayoutProperties = new LayoutProperties()
     };
 
-    private record FooterLink(string Href, string Icon, string ViewBox = "0 0 24 24");
+    private record FooterLink(string WebsiteName, string Href, string Icon, string ViewBox = "0 0 24 24");
 
     private static readonly List<FooterLink> FooterLinks = [
-        new ("https://tortoiseeattoes.itch.io", IconsItchIo, "0 0 245.371 220.736"),
-        new ("https://github.com/TortoiseEatToes", Icons.Custom.Brands.GitHub),
-        new ("https://www.linkedin.com/in/sara-asmussen-69a830155/", Icons.Custom.Brands.LinkedIn),
+        new ("Itch.io", "https://tortoiseeattoes.itch.io", IconsItchIo, "0 0 245.371 220.736"),
+        new ("GitHub","https://github.com/TortoiseEatToes", Icons.Custom.Brands.GitHub),
+        new ("LinkedIn","https://www.linkedin.com/in/sara-asmussen-69a830155/", Icons.Custom.Brands.LinkedIn),
     ];
 
     private static readonly PaletteLight LightPalette = new()
