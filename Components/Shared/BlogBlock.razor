@@ -1,27 +1,46 @@
-﻿<MudCard>
-	<MudStack >
-		<MudButton OnClick="@OnButtonClick">
-			@Title
-		</MudButton>
-		@if (@Revealed)
-		{
-			<div>@ChildContent</div>
-		}
-	</MudStack>
-</MudCard>
-
+﻿@if (IsContentShown())
+{
+	<MudCard>
+		<MudStack>
+			<MudButton OnClick="@OnButtonClick">
+				@Title
+			</MudButton>
+			<MudText>Publish date: @CreationDate.ToString()</MudText>
+			@if (@Revealed)
+			{
+				<div style="margin-left: 5px; margin-right: 5px">
+					@ChildContent
+				</div>
+			}
+		</MudStack>
+	</MudCard>
+}
 
 @code {
 	[Parameter]
 	public string Title { get; set; } = "Title not set";
 
 	[Parameter]
+	public DateTime CreationDate { get; set; } = DateTime.Now;
+
+	[Parameter]
+	public string ContentId { get; set; } = "NotSet";
+
+	[Parameter]
+	public string? Filter { get; set; }
+
+	[Parameter]
 	public RenderFragment? ChildContent { get; set; }
 
-	private bool Revealed { get; set; }
+	private bool Revealed { get; set; } = true;
 
 	private void OnButtonClick()
 	{
 		Revealed = !Revealed;
+	}
+
+	private bool IsContentShown()
+	{
+		return Filter is null || Filter == ContentId;
 	}
 }

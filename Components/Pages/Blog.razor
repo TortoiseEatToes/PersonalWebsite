@@ -3,17 +3,33 @@
 
 <PageTitle>Blog</PageTitle>
 
-<BlogBlock Title="Website hosting on GitHub">
-	<MudText Typo=Typo.h6>Talk about this project</MudText>
-	<MudText Typo=Typo.h6>Started in Blazor server</MudText>
-	<MudText Typo=Typo.h6>Talk about issues with refreshing the page loading animation when swapping pages</MudText>
-	<MudText Typo=Typo.h6>Moved to webassembly</MudText>
-</BlogBlock>
+<MudStack>
+	<BlogBlock Title="Website hosting on GitHub" ContentId="WebsitehostingonGitHub" Filter=@Filter>
+		<MudText Typo=Typo.h6>For this project, I wanted to use Blazor to create my own website with minimal hosting coosts.</MudText>
+		<MudText Typo=Typo.h6>This solution that you see on this page is where I am currrently with MudBlazor using Blazor WASM and hosting on GitHub pages.</MudText>
 
+		<MudText Typo=Typo.h6>Pros</MudText>
+		<MudText Typo=Typo.h6>Free hosting!!</MudText>
+		<MudText Typo=Typo.h6>GitHub Action support</MudText>
+		<MudText Typo=Typo.h6>MudBlazor UI framework</MudText>
 
-@code {
+		<MudText Typo=Typo.h6>Cons</MudText>
+		<MudText Typo=Typo.h6>Load times - The loading animation while cute is there to hide the time it takes for Blazor to inject itself</MudText>
+		<MudText Typo=Typo.h6>Page navigation is technically done by rerouting off of the GitHub 404 page lol</MudText>
+		<MudText Typo=Typo.h6>Metadata on properly works on the home page</MudText>
+
+		<MudText Typo=Typo.h6>How I did this</MudText>
+		<MudText Typo=Typo.h6>https://mudblazor.com/getting-started/installation#manual-install-add-references</MudText>
+		<MudText Typo=Typo.h6>https://learn.microsoft.com/en-us/aspnet/core/blazor/host-and-deploy/webassembly/github-pages?view=aspnetcore-10.0</MudText>
+
+	</BlogBlock>
+
+	<BlogBlock Title="SaraTest" ContentId="SaraTest" Filter=@Filter>
+		<MudText Typo=Typo.h6>Sara testing block.</MudText>
+	</BlogBlock>
+</MudStack>
+
+	@code {
 	[Parameter]
-	public string? Filter { get; set; }
-
-	protected override void OnParametersSet() => Filter = Filter ?? "NotSet";
+	public string? Filter { get; set; } = "SaraTest";
 }
