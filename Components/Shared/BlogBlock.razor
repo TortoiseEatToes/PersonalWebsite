@@ -1,20 +1,21 @@
-﻿@if (IsContentShown())
+﻿@if (!IsContentShown())
 {
-	<MudCard>
-		<MudStack>
-			<MudButton OnClick="@OnButtonClick">
-				@Title
-			</MudButton>
-			<MudText>Publish date: @CreationDate.ToString()</MudText>
-			@if (@Revealed)
-			{
-				<div style="margin-left: 5px; margin-right: 5px">
-					@ChildContent
-				</div>
-			}
-		</MudStack>
-	</MudCard>
+	return;
 }
+
+<MudCard>
+	<MudCardHeader>
+		<MudText Typo=Typo.h6>@Title</MudText>
+	</MudCardHeader>
+
+	<MudCardContent>
+		@ChildContent
+	</MudCardContent>
+
+	<MudCardActions>
+		<MudButton Href=@GetHrefPath() Variant="Variant.Text" Color="Color.Primary">Read More</MudButton>
+	</MudCardActions>
+</MudCard>
 
 @code {
 	[Parameter]
@@ -24,23 +25,25 @@
 	public DateTime CreationDate { get; set; } = DateTime.Now;
 
 	[Parameter]
-	public string ContentId { get; set; } = "NotSet";
-
-	[Parameter]
 	public string? Filter { get; set; }
 
 	[Parameter]
 	public RenderFragment? ChildContent { get; set; }
 
-	private bool Revealed { get; set; } = true;
+	private string ContentId = "NotSet";
 
-	private void OnButtonClick()
+	protected override void OnInitialized()
 	{
-		Revealed = !Revealed;
+		ContentId = Title.Replace(" ", "");
 	}
 
 	private bool IsContentShown()
 	{
 		return Filter is null || Filter == ContentId;
+	}
+
+	private string GetHrefPath()
+	{
+		return $"Blog/{ContentId}";
 	}
 }
