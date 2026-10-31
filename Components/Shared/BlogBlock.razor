@@ -18,9 +18,12 @@
 		</MudStack>
 	</MudCardContent>
 
-	<MudCardActions>
-		<MudButton Href=@GetHrefPath() Variant="Variant.Text" Color="Color.Primary">Read More</MudButton>
-	</MudCardActions>
+	@if (!IsFilterUsed())
+	{
+		<MudCardActions>
+			<MudButton Href=@GetHrefPath() Variant="Variant.Text" Color="Color.Primary">Read More</MudButton>
+		</MudCardActions>
+	}
 </MudCard>
 
 @code {
