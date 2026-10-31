@@ -1,6 +1,6 @@
 ﻿<MudGrid>
-	<MudItem>
-		<MudCard Elevation="5">
+	<MudItem class="">
+		<MudCard Elevation=@Elevation Class=@Class>
 			<MudCardHeader>
 				<MudText Color="Color.Success">Pros</MudText>
 			</MudCardHeader>
@@ -10,7 +10,7 @@
 		</MudCard>
 	</MudItem>
 	<MudItem>
-		<MudCard Elevation="5">
+		<MudCard Elevation=@Elevation Class=@Class>
 			<MudCardHeader>
 				<MudText Color="Color.Error">Cons</MudText>
 			</MudCardHeader>
@@ -27,4 +27,9 @@
 
 	[Parameter]
 	public RenderFragment? Cons { get; set; }
+
+	[Parameter]
+	public int Elevation { get; set; } = 5;
+
+	private string? Class { get; set; } = "d-flex align-center justify-center mud-width-full py-8";
 }
