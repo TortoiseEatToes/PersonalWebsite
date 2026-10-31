@@ -11,20 +11,25 @@
 		</BlogHeader>
 
 		<BlogBody>
-			<MudText>Pros</MudText>
-			<MudText>Free hosting!!</MudText>
-			<MudText>GitHub Action support</MudText>
-			<MudText>MudBlazor UI framework</MudText>
+			<ProsConsList>
+				<Pros>
+					<MudText>Free hosting!!</MudText>
+					<MudText>GitHub Action support</MudText>
+					<MudText>MudBlazor UI framework</MudText>
+				</Pros>
+				<Cons>
+					<MudText>Load times - The loading animation while cute is there to hide the time it takes for Blazor to inject itself</MudText>
+					<MudText>Page navigation is technically done by rerouting off of the GitHub 404 page lol</MudText>
+					<MudText>Metadata on properly works on the home page</MudText>
+				</Cons>
+			</ProsConsList>
 
-			<MudText>Cons</MudText>
-			<MudText>Load times - The loading animation while cute is there to hide the time it takes for Blazor to inject itself</MudText>
-			<MudText>Page navigation is technically done by rerouting off of the GitHub 404 page lol</MudText>
-			<MudText>Metadata on properly works on the home page</MudText>
-
-			<MudText>How I did this</MudText>
-			<MudLink Href="https://mudblazor.com/getting-started/installation#using-templates" Target="_blank">Mud Blazor Getting Startd</MudLink>
-			<MudLink Href="https://learn.microsoft.com/en-us/aspnet/core/blazor/host-and-deploy/webassembly/github-pages?view=aspnetcore-10.0" Target="_blank">Blazor host and depoy</MudLink>
-			<MudText>Lessons learned</MudText>
+			<MudList T="string">
+				<MudText>How I did this</MudText>
+				<MudLink Href="https://mudblazor.com/getting-started/installation#using-templates" Target="_blank">Mud Blazor Getting Startd</MudLink>
+				<MudLink Href="https://learn.microsoft.com/en-us/aspnet/core/blazor/host-and-deploy/webassembly/github-pages?view=aspnetcore-10.0" Target="_blank">Blazor host and depoy</MudLink>
+				<MudText>Lessons learned</MudText>
+			</MudList>
 		</BlogBody>
 	</BlogBlock>
 

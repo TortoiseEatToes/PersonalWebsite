@@ -1,0 +1,30 @@
+﻿<MudGrid>
+	<MudItem>
+		<MudCard Elevation="5">
+			<MudCardHeader>
+				<MudText Color="Color.Success">Pros</MudText>
+			</MudCardHeader>
+			<MudCardContent>
+				@Pros
+			</MudCardContent>
+		</MudCard>
+	</MudItem>
+	<MudItem>
+		<MudCard Elevation="5">
+			<MudCardHeader>
+				<MudText Color="Color.Error">Cons</MudText>
+			</MudCardHeader>
+			<MudCardContent>
+				@Cons
+			</MudCardContent>
+		</MudCard>
+	</MudItem>
+</MudGrid>
+
+@code {
+	[Parameter]
+	public RenderFragment? Pros { get; set; }
+
+	[Parameter]
+	public RenderFragment? Cons { get; set; }
+}
