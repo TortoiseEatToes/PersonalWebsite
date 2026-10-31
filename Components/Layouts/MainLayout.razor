@@ -27,7 +27,7 @@
                 @foreach (var button in @GetFooterButtons())
                 {
                     <MudButton Href=@button.Href Target="_blank" Variant="Variant.Filled" Class="rounded-xl">
-                        <MudIcon Icon=@button.Icon ViewBox=@button.ViewBox Size=Size.Large />
+                        <MudIcon Icon=@button.Icon ViewBox=@button.ViewBox Size=Size.Large Color=Color.Primary/>
                     </MudButton>
                 }
             </MudStack>
