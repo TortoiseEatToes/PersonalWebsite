@@ -1,6 +1,6 @@
 ﻿<MudGrid>
 	<MudItem style="width:100%" xs=12 sm=6>
-		<MudCard Elevation=@Elevation Class=@Class>
+		<MudCard Elevation=@Elevation style="height:100%">
 			<MudCardHeader>
 				<MudText Color="Color.Success">Pros</MudText>
 			</MudCardHeader>
@@ -10,7 +10,7 @@
 		</MudCard>
 	</MudItem>
 	<MudItem style="width:100%" xs=12 sm=6>
-		<MudCard Elevation=@Elevation Class=@Class>
+		<MudCard Elevation=@Elevation style="height:100%">
 			<MudCardHeader>
 				<MudText Color="Color.Error">Cons</MudText>
 			</MudCardHeader>
@@ -30,6 +30,4 @@
 
 	[Parameter]
 	public int Elevation { get; set; } = 5;
-
-	private string? Class = "d-flex align-center justify-center mud-width-full py-8";
 }
