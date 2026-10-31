@@ -9,7 +9,13 @@
 	</MudCardHeader>
 
 	<MudCardContent>
-		@ChildContent
+		<MudStack>
+			@BlogHeader
+			@if (IsFilterUsed())
+			{
+				@BlogBody
+			}
+		</MudStack>
 	</MudCardContent>
 
 	<MudCardActions>
@@ -28,7 +34,10 @@
 	public string? Filter { get; set; }
 
 	[Parameter]
-	public RenderFragment? ChildContent { get; set; }
+	public RenderFragment? BlogHeader { get; set; }
+
+	[Parameter]
+	public RenderFragment? BlogBody { get; set; }
 
 	private string ContentId = "NotSet";
 
@@ -37,9 +46,14 @@
 		ContentId = Title.Replace(" ", "");
 	}
 
+	private bool IsFilterUsed()
+	{
+		return Filter is not null;
+	}
+
 	private bool IsContentShown()
 	{
-		return Filter is null || Filter == ContentId;
+		return !IsFilterUsed() || Filter == ContentId;
 	}
 
 	private string GetHrefPath()
