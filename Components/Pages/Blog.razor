@@ -35,10 +35,24 @@
 				<li><MudLink Href="https://mudblazor.com/getting-started/installation#using-templates" Target="_blank">Mud Blazor Getting Startd</MudLink></li>
 				<li><MudLink Href="https://learn.microsoft.com/en-us/aspnet/core/blazor/host-and-deploy/webassembly/github-pages?view=aspnetcore-10.0" Target="_blank">Blazor host and depoy</MudLink></li>
 			</ol>
+			<AppSettingsJsonCode/>
 
 			<MudText>Lessons learned</MudText>
 			<MudText>Bring up a code example of the base href.</MudText>
 			<MudText>Mention Metadata tags.</MudText>
+			<pre>
+				<code>
+				"commandLineArgs": "--pathbase=/LocalWebsite",
+				"launchUrl": "LocalWebsite"
+				</code>
+			</pre>
+
+			<pre>
+				<code>
+				<!-- GitHub -->
+				<base href="/LocalWebsite/" />
+				</code>
+			</pre>
 		</BlogBody>
 	</BlogBlock>
 </MudStack>
