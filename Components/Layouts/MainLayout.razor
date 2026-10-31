@@ -12,7 +12,7 @@
         @foreach (var button in @GetHeaderLinks())
         {
             <MudButton Href=@button.Path>
-                <MudText>@button.DisplayText</MudText>
+                <MudText Color=Color.Primary>@button.DisplayText</MudText>
             </MudButton>
         }
     </MudAppBar>
