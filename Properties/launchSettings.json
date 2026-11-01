@@ -10,8 +10,8 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "commandLineArgs": "--pathbase=/LocalWebsite",
-      "launchUrl": "LocalWebsite"
+      "commandLineArgs": "--pathbase=/dev",
+      "launchUrl": "dev"
     },
     "https": {
       "commandName": "Project",
@@ -22,8 +22,8 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "commandLineArgs": "--pathbase=/LocalWebsite",
-      "launchUrl": "LocalWebsite"
+      "commandLineArgs": "--pathbase=/dev",
+      "launchUrl": "dev"
     }
   }
 }
