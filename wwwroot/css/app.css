@@ -69,8 +69,6 @@ html, body {
 
 code {
     color: #c02d76;
-    display: block;
-    white-space: pre-wrap
 }
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
