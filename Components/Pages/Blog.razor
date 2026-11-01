@@ -29,47 +29,83 @@
 				</Cons>
 			</ProsConsList>
 			<MudText>For my use case, the hard-learnings and low-cost were perfect.</MudText>
+			<MudSpacer/>
 
-			<MudText>How I did this</MudText>
-			<MudAlert Severity="Severity.Error">Before proceeding, make sure you decide if you want to override your user homepage or the project page!</MudAlert>
+			<MudCard Elevation=5>
+				<MudCardHeader>
+					<MudText Typo=Typo.h6>How I did this</MudText>
+				</MudCardHeader>
+				<MudCardContent>
+					<ol type="1" style="margin-left: 20px;">
+						<li>
+							<MudText>
+								Create a new GitHub repository following this documentation: <MudLink Href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site" Target="_blank">Create a github pages site</MudLink>
+							</MudText>
+						</li>
+						<li>
+							<MudText>
+								Create a new MudBlazor WASM starting template in your repo.  You can follow the directions from here:
+								<MudLink Href="https://mudblazor.com/getting-started/installation#using-templates" Target="_blank">Mud Blazor Getting Started</MudLink>
+								<MudAlert Severity="Severity.Warning">Ensuring that you select "WebAssembly" is important here as GitHub pages cannot host a full Blazor Server application.</MudAlert>
+							</MudText>
+						</li>
+						<li>
+							<MudText>Double check and ensure you have a <code>base href="/"</code> block in your index.html.  This is very important for asset navigation in local and published environments.</MudText>
+							<MudText>My source code: <MudLink Href="https://github.com/TortoiseEatToes/tortoiseeattoes.github.io/blob/main/wwwroot/index.html#L6" Target="_blank">launchSettings.json</MudLink></MudText>
+						</li>
+						<li>
+							<MudText>
+								Set your project up to auto-deploy to GitHub pages by following this documentation:
+								<MudLink Href="https://learn.microsoft.com/en-us/aspnet/core/blazor/host-and-deploy/webassembly/github-pages?view=aspnetcore-10.0" Target="_blank">Blazor host and depoy</MudLink>
+							</MudText>
+						</li>
+						<li>
+							<MudText>Finally, modify your action to meet your needs. In my case, I also added a block to update the publish tag for fun.
+								<MudLink Href="https://github.com/TortoiseEatToes/PersonalWebsite/blob/main/.github/workflows/static.yml#L52" Target="_blank">static.yml</MudLink>
+							</MudText>
+							<MudText>You can see my finished version of that action here: <MudLink Href="https://github.com/TortoiseEatToes/PersonalWebsite/blob/main/.github/workflows/static.yml" Target="_blank">static.yml</MudLink></MudText>
+						</li>
+					</ol>
+				</MudCardContent>
+			</MudCard>
+			<MudSpacer />
 
-			<ol type="1" style="margin-left: 20px;">
-				<li>
-					<MudText>
-						Create a new GitHub project that will contain your source code here: <MudLink Href="https://github.com/new" Target="_blank">New GitHub Repository</MudLink>
-					</MudText>
-					<MudText>
-						If you want to override the display of your user profile, name it after your username like so: "tortoiseeattoes.github.io".  Otherwise, you will use a webpage named: <code>https://{YOUR_USER_NAME}/{YOUR_REPO_NAME}</code>.
-					</MudText>
-				</li>
-				<li>
-					<MudText>Create a new MudBlazor starting template in your repo.  You can follow the directions from here: 
-						<MudLink Href="https://mudblazor.com/getting-started/installation#using-templates" Target="_blank">Mud Blazor Getting Started</MudLink>
-					</MudText>
-				</li>
-				<li>
-					<MudText>Double check and ensure you have a <code>base href="/"</code> block in your index.html.</MudText>
-					<MudText>My source code: <MudLink Href="https://github.com/TortoiseEatToes/tortoiseeattoes.github.io/blob/main/wwwroot/index.html#L6" Target="_blank">launchSettings.json</MudLink></MudText>
-				</li>
-				<li>
-					<MudText>Set your project up to auto-deploy to GitHub pages by following this documentation:
-						<MudLink Href="https://learn.microsoft.com/en-us/aspnet/core/blazor/host-and-deploy/webassembly/github-pages?view=aspnetcore-10.0" Target="_blank">Blazor host and depoy</MudLink>
-					</MudText>
-					<MudText>If you are creating a project page, make sure to override the base href, otherwise do not update it.</MudText>
-					<MudText>You can see my finished version of that action here: <MudLink Href="https://github.com/TortoiseEatToes/PersonalWebsite/blob/main/.github/workflows/static.yml" Target="_blank">static.yml</MudLink></MudText>
-				</li>
-				<li>
-					<MudText>Finally, modify your action to meet your needs.</MudText>
-					<MudText>In my case, I also added a block to update the publish tag for fun. <MudLink Href="https://github.com/TortoiseEatToes/PersonalWebsite/blob/main/.github/workflows/static.yml#L52" Target="_blank">static.yml</MudLink>
-					</MudText>
-				</li>
-			</ol>
+			<MudCard Elevation=5>
+				<MudCardHeader>
+					<MudText Typo=Typo.h6>Pitfalls to watch out for:</MudText>
+				</MudCardHeader>
+				<MudCardContent>
+					<ol type="1" style="margin-left: 20px;">
+						<li>
+							<MudText>Verify that your base href is correct in your GitHub action.</MudText>
+							<MudText>If you want to publish your site directly onto your user GitHub path you do NOT want to override this value.  So you should ensure that this block is removed from your code</MudText>
+							<code style="display: block; white-space: pre-wrap;">
+								- name: Rewrite base href
+								uses: SteveSandersonMS/ghaction-rewrite-base-href@5b54862a8831e012d4f1a8b2660894415fdde8ec # v1.1.0
+								with:
+								html_path: ${{ env.PUBLISH_DIR }}/index.html
+								base_href: /{YOUR_REPO_NAME}/
+							</code>
+						</li>
+						<li>
+							<MudText>Ensure that you set the .nojekly and 404 redirect logic!</MudText>
+							<MudLink Href="https://learn.microsoft.com/en-us/aspnet/core/blazor/host-and-deploy/webassembly/github-pages?view=aspnetcore-10.0#deployment-notes" Target="_blank">static.yml</MudLink>
+						</li>
+						<li>
+							<MudText>In your 404.html file, make sure that this is set to <code>var segmentCount = 0;</code> if your href is "/".  If not ,it needs to be <code>var segmentCount = 1;</code></MudText>
+						</li>
+					</ol>
+				</MudCardContent>
+			</MudCard>
+			<MudSpacer />
+
 			<MudText>Lessons learned</MudText>
-			<MudText>Bring up a code example of the base href.</MudText>
-			<MudText>Mention Metadata tags.</MudText>
-			<MudText>Handy debugging tools:
-				<MudLink Href="https://discord.com/developers/embeds?url=https%253A%252F%252Ftortoiseeattoes.github.io" Target="_blank">Discord Embed Debugger</MudLink>
-			</MudText>
+			<MudSpacer />
+
+			<MudText>Handy debugging tools:</MudText>
+			<ol type="1" style="margin-left: 20px;">
+				<li><MudText><MudLink Href="https://discord.com/developers/embeds?url=https%253A%252F%252Ftortoiseeattoes.github.io" Target="_blank">Discord Embed Debugger</MudLink> was very helpful for iterating on my metadata tags and image links.</MudText></li>
+			</ol>
 		</BlogBody>
 	</BlogBlock>
 </MudStack>
