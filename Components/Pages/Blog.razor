@@ -51,7 +51,7 @@
 						</li>
 						<li>
 							<MudText>Double check and ensure you have a <code>base href="/"</code> block in your index.html.  This is very important for asset navigation in local and published environments.</MudText>
-							<MudText>My source code: <MudLink Href="https://github.com/TortoiseEatToes/tortoiseeattoes.github.io/blob/main/wwwroot/index.html#L6" Target="_blank">launchSettings.json</MudLink></MudText>
+							<MudText>My source code: <MudLink Href="https://github.com/TortoiseEatToes/tortoiseeattoes.github.io/blob/main/wwwroot/index.html#L6" Target="_blank">index.html</MudLink></MudText>
 						</li>
 						<li>
 							<MudText>
@@ -60,9 +60,7 @@
 							</MudText>
 						</li>
 						<li>
-							<MudText>Finally, modify your action to meet your needs. In my case, I also added a block to update the publish tag for fun.
-								<MudLink Href="https://github.com/TortoiseEatToes/PersonalWebsite/blob/main/.github/workflows/static.yml#L52" Target="_blank">static.yml</MudLink>
-							</MudText>
+							<MudText>Finally, modify your action to meet your needs. In my case, I also added a block to update the publish tag for fun.</MudText>
 							<MudText>You can see my finished version of that action here: <MudLink Href="https://github.com/TortoiseEatToes/PersonalWebsite/blob/main/.github/workflows/static.yml" Target="_blank">static.yml</MudLink></MudText>
 						</li>
 					</ol>
@@ -79,7 +77,7 @@
 						<li>
 							<MudText>Verify that your base href is correct in your GitHub action.</MudText>
 							<MudText>If you want to publish your site directly onto your user GitHub path you do NOT want to override this value.  So you should ensure that this block is removed from your code</MudText>
-							<code style="display: block; white-space: pre-wrap;">
+							<code style="display: block; white-space: pre-wrap; max-width: 100%">
 								- name: Rewrite base href
 								uses: SteveSandersonMS/ghaction-rewrite-base-href@5b54862a8831e012d4f1a8b2660894415fdde8ec # v1.1.0
 								with:
@@ -88,11 +86,11 @@
 							</code>
 						</li>
 						<li>
-							<MudText>Ensure that you set the .nojekly and 404 redirect logic!</MudText>
-							<MudLink Href="https://learn.microsoft.com/en-us/aspnet/core/blazor/host-and-deploy/webassembly/github-pages?view=aspnetcore-10.0#deployment-notes" Target="_blank">static.yml</MudLink>
+							<MudText>Ensure that you create the <MudLink Href="https://github.com/TortoiseEatToes/tortoiseeattoes.github.io/blob/main/.nojekyll" Target="_blank">.nojekyll</MudLink> file.</MudText>
 						</li>
 						<li>
-							<MudText>In your 404.html file, make sure that this is set to <code>var segmentCount = 0;</code> if your href is "/".  If not ,it needs to be <code>var segmentCount = 1;</code></MudText>
+							<MudText>In your <MudLink Href="https://github.com/TortoiseEatToes/tortoiseeattoes.github.io/blob/main/wwwroot/404.html#L26" Target="_blank">404.html</MudLink> file,
+								 make sure that the segmentCount is set to <code>var segmentCount = 0;</code> if your href is "/".  If not ,it needs to be <code>var segmentCount = 1;</code></MudText>
 						</li>
 					</ol>
 				</MudCardContent>
