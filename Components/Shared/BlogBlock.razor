@@ -49,7 +49,7 @@
 
 	protected override void OnInitialized()
 	{
-		ContentId = Title.Replace(" ", "");
+		ContentId = Title.Replace(" ", "-").ToLower();
 	}
 
 	private bool IsFilterUsed()
