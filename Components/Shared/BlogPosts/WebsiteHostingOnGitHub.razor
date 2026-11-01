@@ -1,7 +1,14 @@
-﻿<BlogBlock Title="Website hosting on GitHub" CreationDate=@CreationDate Filter=@Filter>
+﻿<BlogPost Title="Website hosting on GitHub" CreationDate=@CreationDate Filter=@Filter>
 	<BlogHeader>
-		<MudText>For this project, I wanted to use Blazor to create my own website with minimal hosting coosts.</MudText>
-		<MudText>This solution that you see on this page is where I am currrently with MudBlazor using Blazor WASM and hosting on GitHub pages.</MudText>
+		<MudStack Class="mud-width-full mud-height-full">
+			<MudStack Row=true Justify="Justify.Center" AlignItems="AlignItems.Center" Class="mud-width-full mud-height-full">
+				@foreach (var icon in HeaderIcons)
+				{
+					<MudIcon Icon=@icon Size=@Size.Large />
+				}
+			</MudStack>
+			<MudText>I used GitHub pages to create my personal website in a MudBlazor WASM project.  In this post, I'll explain how you can follow along and read what I learned.</MudText>
+		</MudStack>
 	</BlogHeader>
 
 	<BlogBody>
@@ -101,11 +108,13 @@
 			<li><MudText><MudLink Href="https://discord.com/developers/embeds?url=https%253A%252F%252Ftortoiseeattoes.github.io" Target="_blank">Discord Embed Debugger</MudLink> was very helpful for iterating on my metadata tags and image links.</MudText></li>
 		</ol>
 	</BlogBody>
-</BlogBlock>
+</BlogPost>
 
 @code {
 	[Parameter]
 	public string? Filter { get; set; }
 
 	private DateTime CreationDate = new DateTime(2026, 11, 2);
+
+	private List<string> HeaderIcons = [Icons.Custom.Brands.MudBlazor, Icons.Material.Filled.Add, Icons.Custom.Brands.GitHub];
 }
