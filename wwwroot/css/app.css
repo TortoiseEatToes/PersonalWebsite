@@ -63,8 +63,9 @@ html, body {
 }
 
 .loading-animation {
-    display: grid;
+    display: flex;
     place-items: center;
+    flex-direction: column
 }
 
 code {
