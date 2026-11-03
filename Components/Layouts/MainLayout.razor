@@ -7,7 +7,7 @@
 <MudDialogProvider />
 <MudSnackbarProvider />
 
-<MudLayout>
+<MudLayout Class="d-flex flex-column">
     <MudAppBar class="center" style="place-items:center">
         @foreach (var button in @GetHeaderLinks())
         {
@@ -17,21 +17,19 @@
         }
     </MudAppBar>
 
-    <MudMainContent Class="ma-5">
+    <MudMainContent Class="d-flex ma-5">
         @Body
     </MudMainContent>
 
-    <div style="margin-top: 45px; margin-bottom: 25px">
-        <div class="center">
-            <MudStack Row=true Justify=Justify.SpaceEvenly AlignItems=@AlignItems.Center Spacing=10 style="max-width: 90%">
-                @foreach (var button in @GetFooterButtons())
-                {
-                    <MudButton Href=@button.Href Target="_blank" Variant="Variant.Filled" Class="rounded-xl">
-                        <MudIcon Icon=@button.Icon ViewBox=@button.ViewBox Size=Size.Large Color=Color.Primary/>
-                    </MudButton>
-                }
-            </MudStack>
-        </div>
+    <div class="center" style="margin-top: 45px; margin-bottom: 25px">
+        <MudStack Row=true Justify=Justify.SpaceEvenly AlignItems=@AlignItems.Center Spacing=10 style="max-width: 90%">
+            @foreach (var button in @GetFooterButtons())
+            {
+                <MudButton Href=@button.Href Target="_blank" Variant="Variant.Filled" Class="rounded-xl">
+                    <MudIcon Icon=@button.Icon ViewBox=@button.ViewBox Size=Size.Large Color=Color.Primary />
+                </MudButton>
+            }
+        </MudStack>
     </div>
 </MudLayout>
 
