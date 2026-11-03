@@ -19,13 +19,13 @@
         </MudStack>
     </MudAppBar>
 
-    <MudMainContent Class="d-flex mt-5">
+    <MudMainContent Class="d-flex ma-5">
         <div class="center" style="width: min(1500px, 90%); margin: auto;">
             @Body
         </div>
     </MudMainContent>
 
-    <div class="center" style="margin-top: 45px; margin-bottom: 25px; place-items: center">
+    <div class="center" style="margin-top: 25px; margin-bottom: 25px; place-items: center">
         <MudStack Row=true Justify=Justify.SpaceEvenly AlignItems=@AlignItems.Center Spacing=10">
             @foreach (var button in @GetFooterButtons())
             {
