@@ -50,7 +50,7 @@ jobs:
         run: echo "RELEASE_DATE=$(date --rfc-3339=seconds)" >> ${GITHUB_ENV}
 
       - name: Replace timestamp metadata
-        run: sed -i 's/CURRENT_TIME/${{ env.RELEASE_DATE }}/g' ${{ env.PUBLISH_DIR }}/index.html
+        run: sed -i 's/1970-1-1 12:00:00+00:00/${{ env.RELEASE_DATE }}/g' ${{ env.PUBLISH_DIR }}/index.html
         
       - name: Setup Pages
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5.0.0
