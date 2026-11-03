@@ -8,7 +8,7 @@
 <MudSnackbarProvider />
 
 <MudLayout>
-    <MudAppBar class="center">
+    <MudAppBar class="center" style="place-items:center">
         @foreach (var button in @GetHeaderLinks())
         {
             <MudButton Href=@button.Path>

@@ -83,6 +83,5 @@ code {
 
 .center {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    place-content: center;
 }
