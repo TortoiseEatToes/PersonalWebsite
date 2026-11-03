@@ -8,7 +8,7 @@
 <MudSnackbarProvider />
 
 <MudLayout Class="d-flex flex-column">
-    <MudAppBar class="center" style="place-items:center">
+    <MudAppBar class="center" style="place-items: center">
         @foreach (var button in @GetHeaderLinks())
         {
             <MudButton Href=@button.Path>
@@ -21,7 +21,7 @@
         @Body
     </MudMainContent>
 
-    <div class="center" style="margin-top: 45px; margin-bottom: 25px">
+    <div class="center" style="margin-top: 45px; margin-bottom: 25px; place-items: center">
         <MudStack Row=true Justify=Justify.SpaceEvenly AlignItems=@AlignItems.Center Spacing=10 style="max-width: 90%">
             @foreach (var button in @GetFooterButtons())
             {
