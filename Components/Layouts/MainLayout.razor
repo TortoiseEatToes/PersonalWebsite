@@ -8,13 +8,15 @@
 <MudSnackbarProvider />
 
 <MudLayout Class="d-flex flex-column">
-    <MudAppBar Class="d-flex justify-center">
-        @foreach (var button in @GetHeaderLinks())
-        {
-            <MudButton Href=@button.Path>
-                <MudText Color=Color.Primary>@button.DisplayText</MudText>
-            </MudButton>
-        }
+    <MudAppBar Class="d-flex">
+        <MudStack Row=true Justify=Justify.Center AlignItems=@AlignItems.Center Spacing=10 Class="flex-grow-1">
+            @foreach (var button in @GetHeaderLinks())
+            {
+                <MudButton Href=@button.Path>
+                    <MudText Color=Color.Primary>@button.DisplayText</MudText>
+                </MudButton>
+            }
+        </MudStack>
     </MudAppBar>
 
     <MudMainContent Class="d-flex">
@@ -22,7 +24,7 @@
     </MudMainContent>
 
     <div class="center" style="margin-top: 45px; margin-bottom: 25px; place-items: center">
-        <MudStack Row=true Justify=Justify.SpaceEvenly AlignItems=@AlignItems.Center Spacing=10 style="max-width: 90%">
+        <MudStack Row=true Justify=Justify.SpaceEvenly AlignItems=@AlignItems.Center Spacing=10">
             @foreach (var button in @GetFooterButtons())
             {
                 <MudButton Href=@button.Href Target="_blank" Variant="Variant.Filled" Class="rounded-xl">
