@@ -85,3 +85,8 @@ code {
     display: flex;
     place-content: center;
 }
+
+ol {
+    display: flex;
+    flex-direction: column;
+}
