@@ -78,6 +78,7 @@
 					<li>
 						<MudText>Verify that your base href is correct in your GitHub action.</MudText>
 						<MudText>If you want to publish your site directly onto your user GitHub path you do NOT want to override this value.  So you should ensure that this block is removed from your code</MudText>
+						<!-- 
 						<code style="display: block; white-space: pre-wrap; max-width: 100%">
 							- name: Rewrite base href
 							uses: SteveSandersonMS/ghaction-rewrite-base-href@5b54862a8831e012d4f1a8b2660894415fdde8ec # v1.1.0
@@ -85,6 +86,8 @@
 							html_path: ${{ env.PUBLISH_DIR }}/index.html
 							base_href: /{YOUR_REPO_NAME}/
 						</code>
+						-->
+
 					</li>
 					<li>
 						<MudText>Ensure that you create the <MudLink Href="https://github.com/TortoiseEatToes/tortoiseeattoes.github.io/blob/main/.nojekyll" Target="_blank">.nojekyll</MudLink> file.</MudText>
