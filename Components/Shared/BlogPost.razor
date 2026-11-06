@@ -5,14 +5,14 @@
 
 <MudCard id=@ContentId Class="d-flex flex-grow-1">
 	<MudCardHeader Class="d-flex flex-grow-1">
-		<MudStack>
+		<MudStack Class="d-flex flex-grow-1">
 			<MudText Typo=Typo.h4>@Title</MudText>
 			<MudText Typo=Typo.h6>Date: @CreationDate.ToString("MMMM dd, yyyy")</MudText>
 		</MudStack>
 	</MudCardHeader>
 
 	<MudCardContent Class="d-flex flex-grow-1">
-		<MudStack>
+		<MudStack Class="d-flex flex-grow-1">
 			@BlogHeader
 			@if (IsFilterUsed())
 			{
