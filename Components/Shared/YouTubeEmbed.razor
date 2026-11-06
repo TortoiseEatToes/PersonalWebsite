@@ -1,12 +1,14 @@
-﻿<iframe width=@Width height=@Height
-		src=@Source
-		title=@Title
-		frameborder="0"
-		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-		referrerpolicy="strict-origin-when-cross-origin"
-		allowfullscreen
-		style="height:200px;width:300px;">
-</iframe>
+﻿<div class="container">
+	<iframe width=@Width height=@Height
+			src=@Source
+			title=@Title
+			frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+			referrerpolicy="strict-origin-when-cross-origin"
+			allowfullscreen
+			class="responsive-iframe">
+	</iframe>
+</div>
 
 @code {
 	[Parameter]
@@ -20,7 +22,4 @@
 
 	[Parameter]
 	public string Title { get; set; } = "YouTube video player";
-
-	[Parameter]
-	public string Style { get; set; } = $"height:560px; width:315px";
 }
