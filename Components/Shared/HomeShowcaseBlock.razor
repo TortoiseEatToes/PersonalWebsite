@@ -4,15 +4,13 @@
 		<div class="center">
 			@ChildContent
 		</div>
-		@foreach (var description in DescriptionBlocks)
-		{
-			<MudText style="text-align: center;">@description</MudText>
-		}
 		<MudStack Class="d-flex">
-			<MudText style="text-align: center;">My role</MudText>
-			@if (!string.IsNullOrEmpty(Href))
+			<MudText>Date Range: @DateRange</MudText>
+			<MudText>Platforms: @Platforms</MudText>
+			<MudText>Tools: @Tools</MudText>
+			@if (!string.IsNullOrEmpty(ProjectPageName))
 			{
-				<MudButton Href=@Href Variant=Variant.Filled Color=Color.Primary>Read More</MudButton>
+				<MudButton Href=@GetProjectHref() Variant=Variant.Filled Color=Color.Primary>Read More</MudButton>
 			}
 		</MudStack>
 	</MudStack>
@@ -23,11 +21,22 @@
 	public string Title { get; set; } = "Title not set";
 
 	[Parameter]
-	public List<string> DescriptionBlocks { get; set; } = [];
+	public string DateRange { get; set; } = "";
 
 	[Parameter]
-	public string Href { get; set; } = "";
+	public string Tools { get; set; } = "";
+
+	[Parameter]
+	public string Platforms { get; set; } = "";
+
+	[Parameter]
+	public string ProjectPageName { get; set; } = "";
 
 	[Parameter]
 	public RenderFragment? ChildContent { get; set; }
+
+	private string GetProjectHref()
+	{
+		return $"/projects/{ProjectPageName}";
+	}
 }

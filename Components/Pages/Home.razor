@@ -9,19 +9,33 @@
 
 	<MudGrid Class="d-flex flex-grow-1" Justify=Justify.Center>
 		<MudItem Class="d-flex flex-grow-1" md="6" id="D5">
-			<HomeShowcaseBlock Title="Diablo V" DescriptionBlocks=@Diablo5Description Href="/projects/diablo-five">
+			<HomeShowcaseBlock
+				Title="Diablo V"
+				DateRange="2025-Present"
+				Platforms="Unannounced"
+				Tools="Jenkins, DotNet, C++"
+				ProjectPageName="diablo-five">
 				<YouTubeEmbed Source="https://www.youtube.com/embed/GxCN_AKYtts?si=s4NERdYbYDMN4CQP" />
 			</HomeShowcaseBlock>
 		</MudItem>
 
 		<MudItem Class="d-flex flex-grow-1" md="6" id="D4">
-			<HomeShowcaseBlock Title="Diablo IV" DescriptionBlocks=@Diablo4Description Href="/projects/diablo-four">
+			<HomeShowcaseBlock 
+				Title="Diablo IV" 
+				DateRange="2020-2025" 
+				Platforms="PC, PlayStation 4/5, Xbox One, Xbox Series, Switch" 
+				Tools="Jenkins, DotNet, C++, 1st party CLIs"
+				ProjectPageName="diablo-four">
 				<YouTubeEmbed Source="https://www.youtube.com/embed/3t1WJsFXY-8?si=p-J05T7OyCSLeY0u" />
 			</HomeShowcaseBlock>
 		</MudItem>
 
 		<MudItem Class="d-flex flex-grow-1" md="6" id="HungryHungryHamsters">
-			<HomeShowcaseBlock Title="Hungry Hungry Hamsters" DescriptionBlocks=@HungryHungryDescription>
+			<HomeShowcaseBlock
+				Title="Hungry Hungry Hamsters"
+				DateRange="March 2022 (48 hour jam)"
+				Platforms="Web browser"
+				Tools="Unity, Odin Inspector">
 				<LinkedImage Href="https://ninehearts.itch.io/hamsters" Source="images/HungryHungryHamsters.png" />
 			</HomeShowcaseBlock>
 		</MudItem>
@@ -30,15 +44,5 @@
 
 
 @code {
-	private readonly List<string> Diablo5Description = ["I started working fully on Diablo 5 in 2025.", 
-														"I've done a bunch of work on our automated testing framework."];
-
-	private readonly List<string> Diablo4Description = ["I started on Diablo 4 back in 2020.", 
-														"Mention the digital foundry video and the game jam."];
-
-	private readonly List<string> HungryHungryDescription = ["Blizzard game jam"];
-
-	private readonly List<string> GardenOfReverieDescription = [@"This is our desynchronous game jame game where we made a multiplayer game with no real time networking component."];
-
-	private readonly List<string> DesperateMeasuresDescription = ["First game jam where I experimented with pikmin player controller."];
+	private const string DiabloTools = "Jenkins, DotNet, C++, 1st party CLIs";
 }
