@@ -21,19 +21,19 @@
 		</MudItem>
 
 		<MudItem Class="d-flex flex-grow-1" md="6" id="HungryHungryHamsters">
-			<GameShowcaseImageBlock Title="Hungry Hungry Hamsters" DescriptionBlocks=@HungryHungryDescription Href="diablo-four-work">
+			<GameShowcaseImageBlock Title="Hungry Hungry Hamsters" DescriptionBlocks=@HungryHungryDescription>
 				<LinkedImage Href="https://ninehearts.itch.io/hamsters" Source="images/HungryHungryHamsters.png" />
 			</GameShowcaseImageBlock>
 		</MudItem>
 
 		<MudItem Class="d-flex flex-grow-1" md="6" id="GardenOfReverie">
-			<GameShowcaseImageBlock Title="Garden Of Reverie" DescriptionBlocks=@GardenOfReverieDescription Href="diablo-four-work">
+			<GameShowcaseImageBlock Title="Garden Of Reverie" DescriptionBlocks=@GardenOfReverieDescription>
 				<LinkedImage Href="https://tortoiseeattoes.itch.io/garden-of-reverie" Source="images/GardenOfReverie.png" />
 			</GameShowcaseImageBlock>
 		</MudItem>
 
 		<MudItem Class="d-flex flex-grow-1" md="6" id="DesperateMeasures">
-			<GameShowcaseImageBlock Title="Desperate Measures" DescriptionBlocks=@DesperateMeasuresDescription Href="diablo-four-work">
+			<GameShowcaseImageBlock Title="Desperate Measures" DescriptionBlocks=@DesperateMeasuresDescription>
 				<LinkedImage Href="https://tortoiseeattoes.itch.io/desperate-measures" Source="images/DesperateMeasures.png" />
 			</GameShowcaseImageBlock>
 		</MudItem>
@@ -48,10 +48,9 @@
 	private readonly List<string> Diablo4Description = ["I started on Diablo 4 back in 2020.", 
 														"Mention the digital foundry video and the game jam."];
 
-	private readonly List<string> HungryHungryDescription = ["Blizzard game jam", "Line 2"];
+	private readonly List<string> HungryHungryDescription = ["Blizzard game jam"];
 
-	private readonly List<string> GardenOfReverieDescription = [@"This is our desynchronous game jame game where we made a multiplayer game with no real time networking component.", "Line 2"];
+	private readonly List<string> GardenOfReverieDescription = [@"This is our desynchronous game jame game where we made a multiplayer game with no real time networking component."];
 
-	private readonly List<string> DesperateMeasuresDescription = ["First game jam where I experimented with pikmin player controller.",
-																  "Line 2"];
+	private readonly List<string> DesperateMeasuresDescription = ["First game jam where I experimented with pikmin player controller."];
 }
